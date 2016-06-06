@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		6CCEC2371D04D9BE00DB30C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC2361D04D9BE00DB30C0 /* main.m */; };
 		6CCEC23A1D04D9BE00DB30C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC2391D04D9BE00DB30C0 /* AppDelegate.m */; };
-		6CCEC23D1D04D9BE00DB30C0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC23C1D04D9BE00DB30C0 /* ViewController.m */; };
-		6CCEC2401D04D9BF00DB30C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CCEC23E1D04D9BF00DB30C0 /* Main.storyboard */; };
 		6CCEC2431D04D9BF00DB30C0 /* EquiptiLity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC2411D04D9BF00DB30C0 /* EquiptiLity.xcdatamodeld */; };
 		6CCEC2451D04D9BF00DB30C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CCEC2441D04D9BF00DB30C0 /* Assets.xcassets */; };
 		6CCEC2481D04D9BF00DB30C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CCEC2461D04D9BF00DB30C0 /* LaunchScreen.storyboard */; };
+		6CCEC2551D05CA7F00DB30C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CCEC2541D05CA7F00DB30C0 /* Main.storyboard */; };
+		6CCEC25A1D05CCFC00DB30C0 /* CNXEquipment+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC2571D05CCFC00DB30C0 /* CNXEquipment+CoreDataProperties.m */; };
+		6CCEC25B1D05CCFC00DB30C0 /* CNXEquipment.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC2591D05CCFC00DB30C0 /* CNXEquipment.m */; };
+		6CCEC2601D05CF2500DB30C0 /* BrandEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC25F1D05CF2500DB30C0 /* BrandEntryViewController.m */; };
+		6CCEC2641D05D96900DB30C0 /* EquipmentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC2631D05D96900DB30C0 /* EquipmentsTableViewController.m */; };
+		6CCEC2691D05F28B00DB30C0 /* RateEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC2681D05F28B00DB30C0 /* RateEntryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,13 +25,21 @@
 		6CCEC2361D04D9BE00DB30C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6CCEC2381D04D9BE00DB30C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6CCEC2391D04D9BE00DB30C0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6CCEC23B1D04D9BE00DB30C0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6CCEC23C1D04D9BE00DB30C0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		6CCEC23F1D04D9BF00DB30C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6CCEC2421D04D9BF00DB30C0 /* EquiptiLity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EquiptiLity.xcdatamodel; sourceTree = "<group>"; };
 		6CCEC2441D04D9BF00DB30C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6CCEC2471D04D9BF00DB30C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6CCEC2491D04D9BF00DB30C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CCEC2541D05CA7F00DB30C0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		6CCEC2561D05CCFC00DB30C0 /* CNXEquipment+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CNXEquipment+CoreDataProperties.h"; sourceTree = "<group>"; };
+		6CCEC2571D05CCFC00DB30C0 /* CNXEquipment+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CNXEquipment+CoreDataProperties.m"; sourceTree = "<group>"; };
+		6CCEC2581D05CCFC00DB30C0 /* CNXEquipment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNXEquipment.h; sourceTree = "<group>"; };
+		6CCEC2591D05CCFC00DB30C0 /* CNXEquipment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNXEquipment.m; sourceTree = "<group>"; };
+		6CCEC25E1D05CF2500DB30C0 /* BrandEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrandEntryViewController.h; sourceTree = "<group>"; };
+		6CCEC25F1D05CF2500DB30C0 /* BrandEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrandEntryViewController.m; sourceTree = "<group>"; };
+		6CCEC2621D05D96900DB30C0 /* EquipmentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EquipmentsTableViewController.h; sourceTree = "<group>"; };
+		6CCEC2631D05D96900DB30C0 /* EquipmentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EquipmentsTableViewController.m; sourceTree = "<group>"; };
+		6CCEC2671D05F28B00DB30C0 /* RateEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateEntryViewController.h; sourceTree = "<group>"; };
+		6CCEC2681D05F28B00DB30C0 /* RateEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateEntryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +72,10 @@
 		6CCEC2341D04D9BE00DB30C0 /* EquiptiLity */ = {
 			isa = PBXGroup;
 			children = (
-				6CCEC2381D04D9BE00DB30C0 /* AppDelegate.h */,
-				6CCEC2391D04D9BE00DB30C0 /* AppDelegate.m */,
-				6CCEC23B1D04D9BE00DB30C0 /* ViewController.h */,
-				6CCEC23C1D04D9BE00DB30C0 /* ViewController.m */,
-				6CCEC23E1D04D9BF00DB30C0 /* Main.storyboard */,
+				6CCEC25D1D05CD2300DB30C0 /* AppDelegate */,
+				6CCEC25C1D05CD0500DB30C0 /* CoreDataManagedObjects */,
+				6CCEC2541D05CA7F00DB30C0 /* Main.storyboard */,
+				6CCEC2611D05CF2E00DB30C0 /* ViewControllers */,
 				6CCEC2441D04D9BF00DB30C0 /* Assets.xcassets */,
 				6CCEC2461D04D9BF00DB30C0 /* LaunchScreen.storyboard */,
 				6CCEC2491D04D9BF00DB30C0 /* Info.plist */,
@@ -80,6 +91,40 @@
 				6CCEC2361D04D9BE00DB30C0 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6CCEC25C1D05CD0500DB30C0 /* CoreDataManagedObjects */ = {
+			isa = PBXGroup;
+			children = (
+				6CCEC2561D05CCFC00DB30C0 /* CNXEquipment+CoreDataProperties.h */,
+				6CCEC2571D05CCFC00DB30C0 /* CNXEquipment+CoreDataProperties.m */,
+				6CCEC2581D05CCFC00DB30C0 /* CNXEquipment.h */,
+				6CCEC2591D05CCFC00DB30C0 /* CNXEquipment.m */,
+			);
+			name = CoreDataManagedObjects;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		6CCEC25D1D05CD2300DB30C0 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				6CCEC2381D04D9BE00DB30C0 /* AppDelegate.h */,
+				6CCEC2391D04D9BE00DB30C0 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		6CCEC2611D05CF2E00DB30C0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6CCEC2621D05D96900DB30C0 /* EquipmentsTableViewController.h */,
+				6CCEC2631D05D96900DB30C0 /* EquipmentsTableViewController.m */,
+				6CCEC25E1D05CF2500DB30C0 /* BrandEntryViewController.h */,
+				6CCEC25F1D05CF2500DB30C0 /* BrandEntryViewController.m */,
+				6CCEC2671D05F28B00DB30C0 /* RateEntryViewController.h */,
+				6CCEC2681D05F28B00DB30C0 /* RateEntryViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,9 +184,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CCEC2551D05CA7F00DB30C0 /* Main.storyboard in Resources */,
 				6CCEC2481D04D9BF00DB30C0 /* LaunchScreen.storyboard in Resources */,
 				6CCEC2451D04D9BF00DB30C0 /* Assets.xcassets in Resources */,
-				6CCEC2401D04D9BF00DB30C0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,8 +197,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CCEC23D1D04D9BE00DB30C0 /* ViewController.m in Sources */,
+				6CCEC25A1D05CCFC00DB30C0 /* CNXEquipment+CoreDataProperties.m in Sources */,
+				6CCEC2691D05F28B00DB30C0 /* RateEntryViewController.m in Sources */,
+				6CCEC2641D05D96900DB30C0 /* EquipmentsTableViewController.m in Sources */,
+				6CCEC25B1D05CCFC00DB30C0 /* CNXEquipment.m in Sources */,
 				6CCEC23A1D04D9BE00DB30C0 /* AppDelegate.m in Sources */,
+				6CCEC2601D05CF2500DB30C0 /* BrandEntryViewController.m in Sources */,
 				6CCEC2371D04D9BE00DB30C0 /* main.m in Sources */,
 				6CCEC2431D04D9BF00DB30C0 /* EquiptiLity.xcdatamodeld in Sources */,
 			);
@@ -162,14 +211,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6CCEC23E1D04D9BF00DB30C0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6CCEC23F1D04D9BF00DB30C0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6CCEC2461D04D9BF00DB30C0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
