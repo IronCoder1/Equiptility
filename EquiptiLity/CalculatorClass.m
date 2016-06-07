@@ -12,7 +12,7 @@
 
 -(int)calcTotal:(int)daysSelected with:(int)dailyRate
 {
-    return daysSelected * daysSelected;
+    return daysSelected * dailyRate;
 }
 
 @end

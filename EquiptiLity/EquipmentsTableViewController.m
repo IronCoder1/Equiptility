@@ -93,7 +93,7 @@
     CNXEquipment *anEquipment = self.allEquipments[indexPath.row];
     cell.textLabel.text = anEquipment.eBrandModel;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Daily Rate:%@", anEquipment.eRate];
-    cell.detailTextLabel.textColor = [UIColor greenColor];
+    cell.detailTextLabel.textColor = [UIColor redColor];
     
     return cell;
 }

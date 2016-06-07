@@ -14,8 +14,9 @@
 @property (strong, nonatomic) NSMutableArray *daysArray;
 @property (weak, nonatomic) IBOutlet UILabel *dailyRateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numberofDaysLabel;
+
 @property (weak, nonatomic) IBOutlet UILabel *totalLabel;
-@property (weak, nonatomic) IBOutlet UILabel *selectedEquipmentLabel;
+
 
 @end
 
@@ -24,16 +25,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Calculate Hire Total";
+    self.title = [NSString stringWithFormat:@"Hire %@", self.anEquipment.eBrandModel];
     self.daysArray = [[NSMutableArray alloc]initWithCapacity:0];
     for (int i = 1; i <= 66; i++)
     {
         [self.daysArray addObject:[NSNumber numberWithInt:i]];
-      //  NSLog(@"days %d", i);
     }
     
-    self.dailyRateLabel.text = [NSString stringWithFormat:@"Daily Rate:£ %d", [self.anEquipment.eRate intValue]];
-    self.selectedEquipmentLabel.text = self.anEquipment.eBrandModel;
+    self.dailyRateLabel.text = [NSString stringWithFormat:@"Daily Rate: £ %d", [self.anEquipment.eRate intValue]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,19 +49,35 @@
 
 - (NSString *) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger) component
 {
-    return [NSString stringWithFormat:@"%@ day",self.daysArray[row]] ;
+    if ([self.daysArray[row] intValue] <=1)
+    {
+    return [NSString stringWithFormat:@"%@ Day",self.daysArray[row]] ;
+    }
+    else
+    {
+    return [NSString stringWithFormat:@"%@ Days",self.daysArray[row]] ;
+    }
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     int noOfDays = [self.daysArray[row] intValue];
-    NSString *days = [NSString stringWithFormat:@"%d",noOfDays];
-    self.numberofDaysLabel.text  = days;
+    if (noOfDays <=1 ) {
+        
+    self.numberofDaysLabel.text = [NSString stringWithFormat:@"%d Day",noOfDays];
+    }
+    else
+    {
+    self.numberofDaysLabel.text = [NSString stringWithFormat:@"%d Days",noOfDays];
+    }
   
     CalculatorClass *totalObj = [[CalculatorClass alloc]init];
     
     int total = [totalObj calcTotal:noOfDays with:[self.anEquipment.eRate intValue]];
-    self.totalLabel.text = [NSString stringWithFormat:@"Total is £%d",total];
+    self.totalLabel.text = [NSString stringWithFormat:@"£ %d",total];
+    
+   // self.totalLabeL.textColor = [UIColor redColor];
+   // self.totalLabel.font = [UIFont systemFontOfSize:[self fontSizeFromWidth:self.totalLabel.frame.size.width]];
 }
 
 /*

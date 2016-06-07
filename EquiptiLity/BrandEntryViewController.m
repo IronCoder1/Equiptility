@@ -34,7 +34,7 @@
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     
-    
+   
     NSMutableString *stringAfterApplyingChanges = [[NSMutableString alloc] initWithString:textField.text];
 
     if ([string isEqual:@""]) {
@@ -51,6 +51,7 @@
     else
     {
         [self.nextButtonOutlet setEnabled:NO];
+        
     }
     
 //    [self.nextButtonOutlet setEnabled:[ValidationHelper isTextValid:textfield.text afterApplyingChangeAtRange: range withReplacementString: string]
