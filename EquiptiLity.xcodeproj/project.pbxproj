@@ -18,6 +18,9 @@
 		6CCEC2601D05CF2500DB30C0 /* BrandEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC25F1D05CF2500DB30C0 /* BrandEntryViewController.m */; };
 		6CCEC2641D05D96900DB30C0 /* EquipmentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC2631D05D96900DB30C0 /* EquipmentsTableViewController.m */; };
 		6CCEC2691D05F28B00DB30C0 /* RateEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC2681D05F28B00DB30C0 /* RateEntryViewController.m */; };
+		6CCEC26C1D05FBEA00DB30C0 /* NoteEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC26B1D05FBEA00DB30C0 /* NoteEntryViewController.m */; };
+		6CCEC26F1D06D5DB00DB30C0 /* CalculatorClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC26E1D06D5DB00DB30C0 /* CalculatorClass.m */; };
+		6CCEC2751D06EAFF00DB30C0 /* CalculateTotalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC2741D06EAFF00DB30C0 /* CalculateTotalViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,12 @@
 		6CCEC2631D05D96900DB30C0 /* EquipmentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EquipmentsTableViewController.m; sourceTree = "<group>"; };
 		6CCEC2671D05F28B00DB30C0 /* RateEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateEntryViewController.h; sourceTree = "<group>"; };
 		6CCEC2681D05F28B00DB30C0 /* RateEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateEntryViewController.m; sourceTree = "<group>"; };
+		6CCEC26A1D05FBEA00DB30C0 /* NoteEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteEntryViewController.h; sourceTree = "<group>"; };
+		6CCEC26B1D05FBEA00DB30C0 /* NoteEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteEntryViewController.m; sourceTree = "<group>"; };
+		6CCEC26D1D06D5DB00DB30C0 /* CalculatorClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorClass.h; sourceTree = "<group>"; };
+		6CCEC26E1D06D5DB00DB30C0 /* CalculatorClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorClass.m; sourceTree = "<group>"; };
+		6CCEC2731D06EAFF00DB30C0 /* CalculateTotalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculateTotalViewController.h; sourceTree = "<group>"; };
+		6CCEC2741D06EAFF00DB30C0 /* CalculateTotalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculateTotalViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,14 +81,15 @@
 		6CCEC2341D04D9BE00DB30C0 /* EquiptiLity */ = {
 			isa = PBXGroup;
 			children = (
+				6CCEC2711D06D5F600DB30C0 /* CalculatorClass */,
 				6CCEC25D1D05CD2300DB30C0 /* AppDelegate */,
-				6CCEC25C1D05CD0500DB30C0 /* CoreDataManagedObjects */,
+				6CCEC25C1D05CD0500DB30C0 /* CoreDataManagedObjects-DO NOT TOUCH */,
 				6CCEC2541D05CA7F00DB30C0 /* Main.storyboard */,
 				6CCEC2611D05CF2E00DB30C0 /* ViewControllers */,
 				6CCEC2441D04D9BF00DB30C0 /* Assets.xcassets */,
 				6CCEC2461D04D9BF00DB30C0 /* LaunchScreen.storyboard */,
 				6CCEC2491D04D9BF00DB30C0 /* Info.plist */,
-				6CCEC2411D04D9BF00DB30C0 /* EquiptiLity.xcdatamodeld */,
+				6CCEC2721D06E77C00DB30C0 /* COREDATAMODEL */,
 				6CCEC2351D04D9BE00DB30C0 /* Supporting Files */,
 			);
 			path = EquiptiLity;
@@ -93,7 +103,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6CCEC25C1D05CD0500DB30C0 /* CoreDataManagedObjects */ = {
+		6CCEC25C1D05CD0500DB30C0 /* CoreDataManagedObjects-DO NOT TOUCH */ = {
 			isa = PBXGroup;
 			children = (
 				6CCEC2561D05CCFC00DB30C0 /* CNXEquipment+CoreDataProperties.h */,
@@ -101,7 +111,7 @@
 				6CCEC2581D05CCFC00DB30C0 /* CNXEquipment.h */,
 				6CCEC2591D05CCFC00DB30C0 /* CNXEquipment.m */,
 			);
-			name = CoreDataManagedObjects;
+			name = "CoreDataManagedObjects-DO NOT TOUCH";
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -123,8 +133,29 @@
 				6CCEC25F1D05CF2500DB30C0 /* BrandEntryViewController.m */,
 				6CCEC2671D05F28B00DB30C0 /* RateEntryViewController.h */,
 				6CCEC2681D05F28B00DB30C0 /* RateEntryViewController.m */,
+				6CCEC26A1D05FBEA00DB30C0 /* NoteEntryViewController.h */,
+				6CCEC26B1D05FBEA00DB30C0 /* NoteEntryViewController.m */,
+				6CCEC2731D06EAFF00DB30C0 /* CalculateTotalViewController.h */,
+				6CCEC2741D06EAFF00DB30C0 /* CalculateTotalViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6CCEC2711D06D5F600DB30C0 /* CalculatorClass */ = {
+			isa = PBXGroup;
+			children = (
+				6CCEC26D1D06D5DB00DB30C0 /* CalculatorClass.h */,
+				6CCEC26E1D06D5DB00DB30C0 /* CalculatorClass.m */,
+			);
+			name = CalculatorClass;
+			sourceTree = "<group>";
+		};
+		6CCEC2721D06E77C00DB30C0 /* COREDATAMODEL */ = {
+			isa = PBXGroup;
+			children = (
+				6CCEC2411D04D9BF00DB30C0 /* EquiptiLity.xcdatamodeld */,
+			);
+			name = COREDATAMODEL;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +189,7 @@
 				TargetAttributes = {
 					6CCEC2311D04D9BE00DB30C0 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = SUE76DA8VN;
 					};
 				};
 			};
@@ -201,10 +233,13 @@
 				6CCEC2691D05F28B00DB30C0 /* RateEntryViewController.m in Sources */,
 				6CCEC2641D05D96900DB30C0 /* EquipmentsTableViewController.m in Sources */,
 				6CCEC25B1D05CCFC00DB30C0 /* CNXEquipment.m in Sources */,
+				6CCEC26F1D06D5DB00DB30C0 /* CalculatorClass.m in Sources */,
 				6CCEC23A1D04D9BE00DB30C0 /* AppDelegate.m in Sources */,
 				6CCEC2601D05CF2500DB30C0 /* BrandEntryViewController.m in Sources */,
+				6CCEC26C1D05FBEA00DB30C0 /* NoteEntryViewController.m in Sources */,
 				6CCEC2371D04D9BE00DB30C0 /* main.m in Sources */,
 				6CCEC2431D04D9BF00DB30C0 /* EquiptiLity.xcdatamodeld in Sources */,
+				6CCEC2751D06EAFF00DB30C0 /* CalculateTotalViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,10 +343,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = EquiptiLity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.moorsideinc.EquiptiLity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -319,10 +357,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = EquiptiLity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.moorsideinc.EquiptiLity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

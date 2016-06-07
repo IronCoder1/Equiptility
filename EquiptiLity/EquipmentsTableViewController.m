@@ -7,6 +7,7 @@
 //
 
 #import "EquipmentsTableViewController.h"
+#import "CalculateTotalViewController.h"
 
 
 
@@ -38,6 +39,7 @@
 - (void)didReceiveMemoryWarning { [super didReceiveMemoryWarning]; }
 
 - (IBAction)addButtonTapped:(id)sender
+
 {
     [self performSegueWithIdentifier:@"toTextFieldSegue" sender:self];
 }
@@ -74,11 +76,13 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return self.allEquipments.count;
 }
 
@@ -88,10 +92,35 @@
     
     CNXEquipment *anEquipment = self.allEquipments[indexPath.row];
     cell.textLabel.text = anEquipment.eBrandModel;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Daily Rate:%@", anEquipment.eRate];
+    cell.detailTextLabel.textColor = [UIColor greenColor];
     
     return cell;
 }
 
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        int row = (int)indexPath.row;
+        [self.allEquipments removeObjectAtIndex:row];
+        [self.appDelegate.managedObjectContext deleteObject:self.allEquipments[row]];
+        NSError *error = nil;
+        [self.appDelegate.managedObjectContext save:&error];
+        if (error) {
+            NSLog(@"coredata could not saveee at line 116 equpmentvc%@", [error localizedDescription]);
+        }
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"toBookingSegue" sender:nil];
+    
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -127,14 +156,21 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString:@"toBookingSegue"])
+    {
+    CalculateTotalViewController *ctvc = [segue destinationViewController];
+    NSIndexPath *newPath = [self.tableView indexPathForSelectedRow];
+    CNXEquipment *anEquipment = self.allEquipments[newPath.row];
+    ctvc.anEquipment = anEquipment;
+    }
+    
 }
-*/
+
 
 @end

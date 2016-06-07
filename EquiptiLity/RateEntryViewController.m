@@ -9,10 +9,9 @@
 #import "RateEntryViewController.h"
 #import <CoreData/CoreData.h>
 #import "AppDelegate.h"
-#import "CNXEquipment.h"
-#import "RateEntryViewController.h"
+#import "NoteEntryViewController.h"
 
-@interface RateEntryViewController ()
+@interface RateEntryViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *serialNoTextField;
 @property (weak, nonatomic) IBOutlet UITextField *rateTextField;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *nextButtonOutlet;
@@ -33,18 +32,11 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    BOOL rc = NO;
-    if (![self.rateTextField.text isEqualToString:@""])
+    if ([self.serialNoTextField.text length] > 0 && ![self.rateTextField.text isEqualToString:@""])
     {
-        [self.nextButtonOutlet setEnabled:YES];
-        rc = YES;
-        [textField resignFirstResponder];
+    [textField resignFirstResponder];
     }
-    else
-    {
-    //show alert
-    }
-    return  rc;
+    return  YES;
 }
 
 - (IBAction)nextTapped:(id)sender
@@ -52,37 +44,39 @@
     
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     NSError *error = nil;
-    if (![self.serialNoTextField .text isEqualToString:@""])
+    if ([self.rateTextField.text length] > 0 && [self.rateTextField.text floatValue] >0 && [self.rateTextField.text floatValue] <= 9999 && ![self.rateTextField.text isEqualToString:@""])
     {
-        self.anEquipment = [NSEntityDescription insertNewObjectForEntityForName:@"CNXEquipment" inManagedObjectContext:appDelegate.managedObjectContext];
+        self.anEquipment.eRate = [NSNumber numberWithFloat:[self.rateTextField.text floatValue]];
         self.anEquipment.eSerialNo = self.serialNoTextField.text;
-        self.anEquipment.eRate = [self.rateTextField.text floatValue];
         
         [appDelegate.managedObjectContext save:&error];
     }
+    else{
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Oops!" message:@"You must enter a valid daily rate to continue" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        }];
+        [alertController addAction:ok];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
+    
     if (error)
     {
         NSLog(@"error %@", [error localizedDescription]);
     }
     
-    [self performSegueWithIdentifier:@"toRateSegue" sender:self];
+    [self performSegueWithIdentifier:@"toNoteSegue" sender:self];
 }
 
 
-
-- (IBAction)cancelAdding:(id)sender
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
-}
 
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    RateEntryViewController *rateVC = [segue destinationViewController];
-    rateVC.anEquipment = self.nwEquipment;
+    NoteEntryViewController *noteVC = [segue destinationViewController];
+    noteVC.anEquipment = self.anEquipment;
     
 }
 

@@ -22,7 +22,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.eBrandModelTextfield.delegate = self;
     self.title = @"Add an Equipment";
     // Do any additional setup after loading the view.
 }
@@ -32,16 +31,31 @@
     // Dispose of any resources that can be recreated.
 }
 #pragma mark - Text field delegate
--(BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    BOOL rc = NO;
-    if (![self.eBrandModelTextfield.text isEqualToString:@""])
+
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    
+    
+    NSMutableString *stringAfterApplyingChanges = [[NSMutableString alloc] initWithString:textField.text];
+
+    if ([string isEqual:@""]) {
+        [stringAfterApplyingChanges replaceCharactersInRange:range withString:string];
+    } else {
+        [stringAfterApplyingChanges insertString:string atIndex:range.location ];
+    }
+
+    
+    if (![stringAfterApplyingChanges isEqualToString:@""])
     {
         [self.nextButtonOutlet setEnabled:YES];
-        rc = YES;
-        [textField resignFirstResponder];
     }
-    return  rc;
+    else
+    {
+        [self.nextButtonOutlet setEnabled:NO];
+    }
+    
+//    [self.nextButtonOutlet setEnabled:[ValidationHelper isTextValid:textfield.text afterApplyingChangeAtRange: range withReplacementString: string]
+    [self resignFirstResponder];
+    return YES;
 }
 
 - (IBAction)nextTapped:(id)sender
