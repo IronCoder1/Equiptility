@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface Calculator : NSObject
--(int)calcTotal:(int)daysSelected with:(int)dailyRate;
++(int)calcTotal:(int)daysSelected with:(int)dailyRate;
 
--(NSDate *)calcReturnDateByAddingDays:(NSInteger) days;
++(NSDate *)calcReturnDateByAddingDays:(NSInteger)days;
 @end

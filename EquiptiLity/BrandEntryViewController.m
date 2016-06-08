@@ -30,6 +30,13 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void)viewWillAppear:(BOOL)animated
+{
+    
+    [self.eBrandModelTextfield becomeFirstResponder];
+    
+}
+
 #pragma mark - Text field delegate
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
@@ -39,8 +46,10 @@
 
     if ([string isEqual:@""]) {
         [stringAfterApplyingChanges replaceCharactersInRange:range withString:string];
+//        [textField resignFirstResponder];
     } else {
         [stringAfterApplyingChanges insertString:string atIndex:range.location ];
+        
     }
 
     
@@ -55,7 +64,7 @@
     }
     
 //    [self.nextButtonOutlet setEnabled:[ValidationHelper isTextValid:textfield.text afterApplyingChangeAtRange: range withReplacementString: string]
-    [self resignFirstResponder];
+   
     return YES;
 }
 

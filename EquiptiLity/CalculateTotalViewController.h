@@ -11,4 +11,5 @@
 
 @interface CalculateTotalViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 @property (strong,nonatomic) CNXEquipment *anEquipment;
+
 @end

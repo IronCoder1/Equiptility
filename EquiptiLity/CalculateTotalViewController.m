@@ -13,6 +13,9 @@
 
 
 @interface CalculateTotalViewController ()
+{
+    int noOfDays;
+}
 @property (strong, nonatomic) NSMutableArray *daysArray;
 @property (weak, nonatomic) IBOutlet UILabel *dailyRateLabel;
 @property (strong, nonatomic)AppDelegate *appDelegate;
@@ -20,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *retDateLabel;
+@property (weak, nonatomic) IBOutlet UIButton *checkoutButtonTapped;
+- (IBAction)checkoutTapped:(id)sender;
 
 @end
 
@@ -37,6 +42,11 @@
     }
     
     self.dailyRateLabel.text = [NSString stringWithFormat:@"Daily Rate: £ %d", [self.anEquipment.eRate intValue]];
+    if (self.anEquipment.returnDate != nil)
+    {
+        [self.checkoutButtonTapped setEnabled:NO];
+        [self.checkoutButtonTapped setTitle:@"Checked Out" forState:UIControlStateDisabled];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,30 +76,19 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     
-    int noOfDays = [self.daysArray[row] intValue];
+    noOfDays = [self.daysArray[row] intValue];
   
-    Calculator *calc = [[Calculator alloc]init];
-    
-    int total = [calc calcTotal:noOfDays with:[self.anEquipment.eRate intValue]];
-    self.totalLabel.text = [NSString stringWithFormat:@"£ %d",total];
+    int total = [Calculator calcTotal:noOfDays with:[self.anEquipment.eRate intValue]];
+    self.totalLabel.text = [NSString stringWithFormat:@"£%d",total];
+  // self.totalLabel.font = [UIFont fontWithName:@"Menlo" size:32];
     
     NSDateFormatter *dateFormatted = [[NSDateFormatter alloc]init];
     [dateFormatted setDateStyle:NSDateFormatterMediumStyle];
     
-    self.anEquipment.returnDate = [calc calcReturnDateByAddingDays:noOfDays];
-    NSString *dateString = [dateFormatted stringFromDate:self.anEquipment.returnDate];
+    NSDate *retDate = [Calculator calcReturnDateByAddingDays:noOfDays];
+    NSString *dateString = [dateFormatted stringFromDate:retDate];
     self.retDateLabel.text = [NSString stringWithFormat:@"Return Date: %@",dateString];
     
-    NSError *error = nil;
-    [self.appDelegate.managedObjectContext save:&error];
-    if (error)
-    {
-        NSLog(@"coredata could not saveee at line93 calculatetotal %@", [error localizedDescription]);
-    }
-
-    
-   // self.totalLabeL.textColor = [UIColor redColor];
-   // self.totalLabel.font = [UIFont systemFontOfSize:[self fontSizeFromWidth:self.totalLabel.frame.size.width]];
 }
 
 /*
@@ -102,4 +101,36 @@
 }
 */
 
+#pragma MARK - User Action Methods
+
+- (IBAction)checkoutTapped:(id)sender
+{
+  
+    if (self.anEquipment.returnDate == nil)
+    {
+        self.anEquipment.returnDate = [Calculator calcReturnDateByAddingDays:noOfDays];
+        NSError *error = nil;
+        [self.appDelegate.managedObjectContext save:&error];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Great!" message:@"The checkout was succesful" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }];
+        [alertController addAction:ok];
+        [self presentViewController:alertController animated:YES completion:nil];
+
+        if (error)
+        {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Oops!" message:@"Sorry there as been a problem please go back and try again" preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            }];
+            [alertController addAction:ok];
+            [self presentViewController:alertController animated:YES completion:nil];
+
+            NSLog(@"coredata could not saveee at line93 calculatetotal %@", [error localizedDescription]);
+        }
+        
+    }
+}
 @end

@@ -23,20 +23,20 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MjT-WG-f3R">
-                                            <rect key="frame" x="10" y="8" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <rect key="frame" x="10" y="8" width="40" height="20"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKR-aC-YUE">
-                                            <rect key="frame" x="10" y="37" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <rect key="frame" x="10" y="36" width="33" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5B-aw-0HI">
-                                            <rect key="frame" x="533" y="37" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="544" y="43" width="31" height="15"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -164,7 +164,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aut-ug-GBF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1681" y="243"/>
+            <point key="canvasLocation" x="1632" y="235"/>
         </scene>
         <!--Add Equipment-->
         <scene sceneID="l5g-sA-yGu">
@@ -274,55 +274,64 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many days?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p67-9x-ZSd">
-                                <rect key="frame" x="236" y="69" width="129" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <rect key="frame" x="236" y="69" width="128" height="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vG2-a2-g9N">
-                                <rect key="frame" x="0.0" y="98" width="600" height="150"/>
+                                <rect key="frame" x="0.0" y="97" width="600" height="150"/>
                                 <connections>
                                     <outlet property="dataSource" destination="xay-34-5pa" id="chZ-vi-6ne"/>
                                     <outlet property="delegate" destination="xay-34-5pa" id="EYt-dl-Eqt"/>
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdB-wE-IIX">
-                                <rect key="frame" x="10" y="348" width="43" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <rect key="frame" x="10" y="347" width="38" height="18"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzm-Rb-VxP">
-                                <rect key="frame" x="61" y="313" width="141" height="84"/>
+                                <rect key="frame" x="56" y="312" width="141" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="141" id="2Pv-Ss-hAq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="30"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSk-FM-PFe">
                                 <rect key="frame" x="82" y="82" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Rate:" textAlignment="justified" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2X4-DC-IZR">
-                                <rect key="frame" x="10" y="278" width="84" height="20"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <rect key="frame" x="10" y="277" width="78" height="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Return Date:" textAlignment="justified" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eD1-Bf-PAp">
-                                <rect key="frame" x="10" y="409" width="97" height="20"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <rect key="frame" x="10" y="405" width="86" height="18"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tX-MY-H28">
+                                <rect key="frame" x="267" y="540" width="66" height="30"/>
+                                <state key="normal" title="Checkout"/>
+                                <connections>
+                                    <action selector="checkoutTapped:" destination="xay-34-5pa" eventType="touchUpInside" id="45d-Ga-unB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="pzm-Rb-VxP" firstAttribute="leading" secondItem="DdB-wE-IIX" secondAttribute="trailing" constant="8" id="2wN-Cy-S3s"/>
+                            <constraint firstItem="owC-vi-X5Q" firstAttribute="top" secondItem="8tX-MY-H28" secondAttribute="bottom" constant="30" id="70g-b8-5w6"/>
                             <constraint firstItem="DdB-wE-IIX" firstAttribute="top" secondItem="2X4-DC-IZR" secondAttribute="bottom" constant="50" id="E3c-e1-Meu"/>
                             <constraint firstItem="vG2-a2-g9N" firstAttribute="leading" secondItem="N41-65-F10" secondAttribute="leading" id="Lb4-C7-Hc3"/>
+                            <constraint firstItem="8tX-MY-H28" firstAttribute="centerX" secondItem="N41-65-F10" secondAttribute="centerX" id="W48-1g-Zym"/>
                             <constraint firstItem="p67-9x-ZSd" firstAttribute="top" secondItem="Tkh-n8-4Hg" secondAttribute="bottom" constant="5" id="XC0-3c-95G"/>
                             <constraint firstItem="2X4-DC-IZR" firstAttribute="leading" secondItem="N41-65-F10" secondAttribute="leading" constant="10" id="YsB-6J-ojU"/>
                             <constraint firstItem="eD1-Bf-PAp" firstAttribute="top" secondItem="DdB-wE-IIX" secondAttribute="bottom" constant="40" id="cMK-1X-bw0"/>
@@ -339,6 +348,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="checkoutButtonTapped" destination="8tX-MY-H28" id="qcc-hv-QbA"/>
                         <outlet property="dailyRateLabel" destination="2X4-DC-IZR" id="HaQ-xj-76O"/>
                         <outlet property="retDateLabel" destination="eD1-Bf-PAp" id="kah-lP-WOz"/>
                         <outlet property="totalLabel" destination="pzm-Rb-VxP" id="wb2-Ri-GIR"/>

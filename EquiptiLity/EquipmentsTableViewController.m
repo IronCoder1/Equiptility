@@ -93,12 +93,15 @@
     
     CNXEquipment *anEquipment = self.allEquipments[indexPath.row];
     cell.eBrandLabel.text = anEquipment.eBrandModel;
-    cell.eRateLabel.text = [NSString stringWithFormat:@"Daily Rate: £%@", anEquipment.eRate];
+    cell.eBrandLabel.font = [UIFont fontWithName:@"Helvetica" size: 20];
+    cell.eRateLabel.text = [NSString stringWithFormat:@"£%@ per day", anEquipment.eRate];
     cell.eRateLabel.textColor = [UIColor redColor];
+   // cell.eRateLabel.font = [UIFont fontWithName:@"Menlo" size: 16];
     if (anEquipment.returnDate == nil)
     {
         cell.retDateLabel.text = @"Available Now";
         cell.retDateLabel.textColor = [UIColor greenColor];
+        //cell.retDateLabel.font = [UIFont fontWithName:@"Menlo" size: 13];
     }
     else
     {
@@ -108,11 +111,11 @@
     NSString *dateString = [dateFormatted stringFromDate:anEquipment.returnDate];
     cell.retDateLabel.text  = [NSString stringWithFormat:@"Return Date: %@",dateString];
         cell.retDateLabel.textColor = [UIColor redColor];
+     //   cell.retDateLabel.font = [UIFont fontWithName:@"Menlo" size: 13];
     }
     return cell;
 }
 
-// Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete)

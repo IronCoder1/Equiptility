@@ -10,13 +10,13 @@
 
 @implementation Calculator
 
--(int)calcTotal:(int)daysSelected with:(int)dailyRate
++(int)calcTotal:(int)daysSelected with:(int)dailyRate
 {
     return daysSelected * dailyRate;
 }
 
 
--(NSDate *)calcReturnDateByAddingDays:(NSInteger) days
++(NSDate *)calcReturnDateByAddingDays:(NSInteger)days
 {
     
     NSDate *todaysDate = [NSDate date];
