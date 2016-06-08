@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AppDelegate.h"
 #import "CNXEquipment.h"
 #import <CoreData/CoreData.h>
 #import "AppDelegate.h"

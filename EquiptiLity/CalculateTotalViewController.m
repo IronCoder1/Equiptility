@@ -7,16 +7,19 @@
 //
 
 #import "CalculateTotalViewController.h"
-#import "CalculatorClass.h"
+#import "Calculator.h"
+#import "AppDelegate.h"
+#import <CoreData/CoreData.h>
 
 
 @interface CalculateTotalViewController ()
 @property (strong, nonatomic) NSMutableArray *daysArray;
 @property (weak, nonatomic) IBOutlet UILabel *dailyRateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *numberofDaysLabel;
+@property (strong, nonatomic)AppDelegate *appDelegate;
 
 @property (weak, nonatomic) IBOutlet UILabel *totalLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *retDateLabel;
 
 @end
 
@@ -25,6 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.appDelegate = [UIApplication sharedApplication].delegate;
     self.title = [NSString stringWithFormat:@"Hire %@", self.anEquipment.eBrandModel];
     self.daysArray = [[NSMutableArray alloc]initWithCapacity:0];
     for (int i = 1; i <= 66; i++)
@@ -61,20 +65,28 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    int noOfDays = [self.daysArray[row] intValue];
-    if (noOfDays <=1 ) {
-        
-    self.numberofDaysLabel.text = [NSString stringWithFormat:@"%d Day",noOfDays];
-    }
-    else
-    {
-    self.numberofDaysLabel.text = [NSString stringWithFormat:@"%d Days",noOfDays];
-    }
-  
-    CalculatorClass *totalObj = [[CalculatorClass alloc]init];
     
-    int total = [totalObj calcTotal:noOfDays with:[self.anEquipment.eRate intValue]];
+    int noOfDays = [self.daysArray[row] intValue];
+  
+    Calculator *calc = [[Calculator alloc]init];
+    
+    int total = [calc calcTotal:noOfDays with:[self.anEquipment.eRate intValue]];
     self.totalLabel.text = [NSString stringWithFormat:@"£ %d",total];
+    
+    NSDateFormatter *dateFormatted = [[NSDateFormatter alloc]init];
+    [dateFormatted setDateStyle:NSDateFormatterMediumStyle];
+    
+    self.anEquipment.returnDate = [calc calcReturnDateByAddingDays:noOfDays];
+    NSString *dateString = [dateFormatted stringFromDate:self.anEquipment.returnDate];
+    self.retDateLabel.text = [NSString stringWithFormat:@"Return Date: %@",dateString];
+    
+    NSError *error = nil;
+    [self.appDelegate.managedObjectContext save:&error];
+    if (error)
+    {
+        NSLog(@"coredata could not saveee at line93 calculatetotal %@", [error localizedDescription]);
+    }
+
     
    // self.totalLabeL.textColor = [UIColor redColor];
    // self.totalLabel.font = [UIFont systemFontOfSize:[self fontSizeFromWidth:self.totalLabel.frame.size.width]];

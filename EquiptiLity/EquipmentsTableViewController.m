@@ -8,6 +8,7 @@
 
 #import "EquipmentsTableViewController.h"
 #import "CalculateTotalViewController.h"
+#import "EquipmentListTableViewCell.h"
 
 
 
@@ -88,13 +89,26 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"equipmentCell" forIndexPath:indexPath];
+    EquipmentListTableViewCell *cell = (EquipmentListTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"equipmentCell" forIndexPath:indexPath];
     
     CNXEquipment *anEquipment = self.allEquipments[indexPath.row];
-    cell.textLabel.text = anEquipment.eBrandModel;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Daily Rate:%@", anEquipment.eRate];
-    cell.detailTextLabel.textColor = [UIColor redColor];
+    cell.eBrandLabel.text = anEquipment.eBrandModel;
+    cell.eRateLabel.text = [NSString stringWithFormat:@"Daily Rate: £%@", anEquipment.eRate];
+    cell.eRateLabel.textColor = [UIColor redColor];
+    if (anEquipment.returnDate == nil)
+    {
+        cell.retDateLabel.text = @"Available Now";
+        cell.retDateLabel.textColor = [UIColor greenColor];
+    }
+    else
+    {
+    NSDateFormatter *dateFormatted = [[NSDateFormatter alloc]init];
+    [dateFormatted setDateStyle:NSDateFormatterMediumStyle];
     
+    NSString *dateString = [dateFormatted stringFromDate:anEquipment.returnDate];
+    cell.retDateLabel.text  = [NSString stringWithFormat:@"Return Date: %@",dateString];
+        cell.retDateLabel.textColor = [UIColor redColor];
+    }
     return cell;
 }
 

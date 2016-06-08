@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CalculatorClass : NSObject
+@interface Calculator : NSObject
 -(int)calcTotal:(int)daysSelected with:(int)dailyRate;
+
+-(NSDate *)calcReturnDateByAddingDays:(NSInteger) days;
 @end

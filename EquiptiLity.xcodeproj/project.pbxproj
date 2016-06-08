@@ -19,8 +19,9 @@
 		6CCEC2641D05D96900DB30C0 /* EquipmentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC2631D05D96900DB30C0 /* EquipmentsTableViewController.m */; };
 		6CCEC2691D05F28B00DB30C0 /* RateEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC2681D05F28B00DB30C0 /* RateEntryViewController.m */; };
 		6CCEC26C1D05FBEA00DB30C0 /* NoteEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC26B1D05FBEA00DB30C0 /* NoteEntryViewController.m */; };
-		6CCEC26F1D06D5DB00DB30C0 /* CalculatorClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC26E1D06D5DB00DB30C0 /* CalculatorClass.m */; };
+		6CCEC26F1D06D5DB00DB30C0 /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC26E1D06D5DB00DB30C0 /* Calculator.m */; };
 		6CCEC2751D06EAFF00DB30C0 /* CalculateTotalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC2741D06EAFF00DB30C0 /* CalculateTotalViewController.m */; };
+		6CCEC27B1D082B5F00DB30C0 /* EquipmentListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC27A1D082B5F00DB30C0 /* EquipmentListTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,10 +46,12 @@
 		6CCEC2681D05F28B00DB30C0 /* RateEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateEntryViewController.m; sourceTree = "<group>"; };
 		6CCEC26A1D05FBEA00DB30C0 /* NoteEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteEntryViewController.h; sourceTree = "<group>"; };
 		6CCEC26B1D05FBEA00DB30C0 /* NoteEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteEntryViewController.m; sourceTree = "<group>"; };
-		6CCEC26D1D06D5DB00DB30C0 /* CalculatorClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorClass.h; sourceTree = "<group>"; };
-		6CCEC26E1D06D5DB00DB30C0 /* CalculatorClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorClass.m; sourceTree = "<group>"; };
+		6CCEC26D1D06D5DB00DB30C0 /* Calculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calculator.h; sourceTree = "<group>"; };
+		6CCEC26E1D06D5DB00DB30C0 /* Calculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calculator.m; sourceTree = "<group>"; };
 		6CCEC2731D06EAFF00DB30C0 /* CalculateTotalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculateTotalViewController.h; sourceTree = "<group>"; };
 		6CCEC2741D06EAFF00DB30C0 /* CalculateTotalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculateTotalViewController.m; sourceTree = "<group>"; };
+		6CCEC2791D082B5F00DB30C0 /* EquipmentListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EquipmentListTableViewCell.h; sourceTree = "<group>"; };
+		6CCEC27A1D082B5F00DB30C0 /* EquipmentListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EquipmentListTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,8 @@
 			children = (
 				6CCEC2621D05D96900DB30C0 /* EquipmentsTableViewController.h */,
 				6CCEC2631D05D96900DB30C0 /* EquipmentsTableViewController.m */,
+				6CCEC2791D082B5F00DB30C0 /* EquipmentListTableViewCell.h */,
+				6CCEC27A1D082B5F00DB30C0 /* EquipmentListTableViewCell.m */,
 				6CCEC25E1D05CF2500DB30C0 /* BrandEntryViewController.h */,
 				6CCEC25F1D05CF2500DB30C0 /* BrandEntryViewController.m */,
 				6CCEC2671D05F28B00DB30C0 /* RateEntryViewController.h */,
@@ -144,8 +149,8 @@
 		6CCEC2711D06D5F600DB30C0 /* CalculatorClass */ = {
 			isa = PBXGroup;
 			children = (
-				6CCEC26D1D06D5DB00DB30C0 /* CalculatorClass.h */,
-				6CCEC26E1D06D5DB00DB30C0 /* CalculatorClass.m */,
+				6CCEC26D1D06D5DB00DB30C0 /* Calculator.h */,
+				6CCEC26E1D06D5DB00DB30C0 /* Calculator.m */,
 			);
 			name = CalculatorClass;
 			sourceTree = "<group>";
@@ -233,8 +238,9 @@
 				6CCEC2691D05F28B00DB30C0 /* RateEntryViewController.m in Sources */,
 				6CCEC2641D05D96900DB30C0 /* EquipmentsTableViewController.m in Sources */,
 				6CCEC25B1D05CCFC00DB30C0 /* CNXEquipment.m in Sources */,
-				6CCEC26F1D06D5DB00DB30C0 /* CalculatorClass.m in Sources */,
+				6CCEC26F1D06D5DB00DB30C0 /* Calculator.m in Sources */,
 				6CCEC23A1D04D9BE00DB30C0 /* AppDelegate.m in Sources */,
+				6CCEC27B1D082B5F00DB30C0 /* EquipmentListTableViewCell.m in Sources */,
 				6CCEC2601D05CF2500DB30C0 /* BrandEntryViewController.m in Sources */,
 				6CCEC26C1D05FBEA00DB30C0 /* NoteEntryViewController.m in Sources */,
 				6CCEC2371D04D9BE00DB30C0 /* main.m in Sources */,
