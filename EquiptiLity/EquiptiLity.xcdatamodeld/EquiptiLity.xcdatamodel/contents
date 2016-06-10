@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Automatic">
+    <entity name="CNXContact" representedClassName="CNXContact" syncable="YES">
+        <attribute name="cEmailAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cFamilyName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cGivenName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cIphoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cnxequipment" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CNXEquipment" inverseName="cnxcontact" inverseEntity="CNXEquipment" syncable="YES"/>
+    </entity>
     <entity name="CNXEquipment" representedClassName="CNXEquipment" syncable="YES">
         <attribute name="eBrandModel" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="eNote" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="eRate" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="eSerialNo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="returnDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="cnxcontact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CNXContact" inverseName="cnxequipment" inverseEntity="CNXContact" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CNXEquipment" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="CNXContact" positionX="54" positionY="-55" width="128" height="118"/>
+        <element name="CNXEquipment" positionX="-108" positionY="-99" width="128" height="133"/>
     </elements>
 </model>

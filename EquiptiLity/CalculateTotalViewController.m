@@ -80,7 +80,6 @@
   
     int total = [Calculator calcTotal:noOfDays with:[self.anEquipment.eRate intValue]];
     self.totalLabel.text = [NSString stringWithFormat:@"£%d",total];
-  // self.totalLabel.font = [UIFont fontWithName:@"Menlo" size:32];
     
     NSDateFormatter *dateFormatted = [[NSDateFormatter alloc]init];
     [dateFormatted setDateStyle:NSDateFormatterMediumStyle];
@@ -114,7 +113,7 @@
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Great!" message:@"The checkout was succesful" preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            [self.navigationController popViewControllerAnimated:YES];
+            [self.navigationController dismissViewControllerAnimated:YES completion:nil];
         }];
         [alertController addAction:ok];
         [self presentViewController:alertController animated:YES completion:nil];

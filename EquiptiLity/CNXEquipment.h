@@ -2,12 +2,14 @@
 //  CNXEquipment.h
 //  EquiptiLity
 //
-//  Created by MBPinTheAir on 06/06/2016.
+//  Created by MBPinTheAir on 10/06/2016.
 //  Copyright © 2016 moorsideinc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+
+@class CNXContact;
 
 NS_ASSUME_NONNULL_BEGIN
 

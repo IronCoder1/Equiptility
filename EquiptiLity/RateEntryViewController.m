@@ -32,10 +32,12 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    if ([self.serialNoTextField.text length] > 0 && ![self.rateTextField.text isEqualToString:@""])
+    
+    if (![self.rateTextField.text isEqualToString:@""])
     {
-    [textField resignFirstResponder];
+    [textField nextResponder];
     }
+    [textField resignFirstResponder];
     return  YES;
 }
 
@@ -49,7 +51,7 @@
         self.anEquipment.eRate = [NSNumber numberWithFloat:[self.rateTextField.text floatValue]];
         self.anEquipment.eSerialNo = self.serialNoTextField.text;
         
-        [appDelegate.managedObjectContext save:&error];
+       [appDelegate.managedObjectContext save:&error];
     }
     else{
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Oops!" message:@"You must enter a valid daily rate to continue" preferredStyle:UIAlertControllerStyleAlert];

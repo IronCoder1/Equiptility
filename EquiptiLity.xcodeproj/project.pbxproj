@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C9FEDB51D087D4500D6CA20 /* CheckInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FEDB41D087D4500D6CA20 /* CheckInViewController.m */; };
+		6C9FEDF41D0B082200D6CA20 /* CNXEquipment+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FEDED1D0B082200D6CA20 /* CNXEquipment+CoreDataProperties.m */; };
+		6C9FEDF51D0B082200D6CA20 /* CNXEquipment.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FEDEF1D0B082200D6CA20 /* CNXEquipment.m */; };
+		6C9FEDF61D0B082200D6CA20 /* CNXContact+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FEDF11D0B082200D6CA20 /* CNXContact+CoreDataProperties.m */; };
+		6C9FEDF71D0B082200D6CA20 /* CNXContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FEDF31D0B082200D6CA20 /* CNXContact.m */; };
+		6C9FEDFA1D0B087D00D6CA20 /* ContactManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FEDF91D0B087D00D6CA20 /* ContactManager.m */; };
 		6CCEC2371D04D9BE00DB30C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC2361D04D9BE00DB30C0 /* main.m */; };
 		6CCEC23A1D04D9BE00DB30C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC2391D04D9BE00DB30C0 /* AppDelegate.m */; };
 		6CCEC2431D04D9BF00DB30C0 /* EquiptiLity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC2411D04D9BF00DB30C0 /* EquiptiLity.xcdatamodeld */; };
 		6CCEC2451D04D9BF00DB30C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CCEC2441D04D9BF00DB30C0 /* Assets.xcassets */; };
 		6CCEC2481D04D9BF00DB30C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CCEC2461D04D9BF00DB30C0 /* LaunchScreen.storyboard */; };
 		6CCEC2551D05CA7F00DB30C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CCEC2541D05CA7F00DB30C0 /* Main.storyboard */; };
-		6CCEC25A1D05CCFC00DB30C0 /* CNXEquipment+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC2571D05CCFC00DB30C0 /* CNXEquipment+CoreDataProperties.m */; };
-		6CCEC25B1D05CCFC00DB30C0 /* CNXEquipment.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC2591D05CCFC00DB30C0 /* CNXEquipment.m */; };
 		6CCEC2601D05CF2500DB30C0 /* BrandEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC25F1D05CF2500DB30C0 /* BrandEntryViewController.m */; };
 		6CCEC2641D05D96900DB30C0 /* EquipmentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC2631D05D96900DB30C0 /* EquipmentsTableViewController.m */; };
 		6CCEC2691D05F28B00DB30C0 /* RateEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC2681D05F28B00DB30C0 /* RateEntryViewController.m */; };
@@ -25,6 +29,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C9FEDB31D087D4500D6CA20 /* CheckInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInViewController.h; sourceTree = "<group>"; };
+		6C9FEDB41D087D4500D6CA20 /* CheckInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInViewController.m; sourceTree = "<group>"; };
+		6C9FEDEC1D0B082200D6CA20 /* CNXEquipment+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CNXEquipment+CoreDataProperties.h"; path = "EquiptiLity/CNXEquipment+CoreDataProperties.h"; sourceTree = "<group>"; };
+		6C9FEDED1D0B082200D6CA20 /* CNXEquipment+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CNXEquipment+CoreDataProperties.m"; path = "EquiptiLity/CNXEquipment+CoreDataProperties.m"; sourceTree = "<group>"; };
+		6C9FEDEE1D0B082200D6CA20 /* CNXEquipment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CNXEquipment.h; path = EquiptiLity/CNXEquipment.h; sourceTree = "<group>"; };
+		6C9FEDEF1D0B082200D6CA20 /* CNXEquipment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CNXEquipment.m; path = EquiptiLity/CNXEquipment.m; sourceTree = "<group>"; };
+		6C9FEDF01D0B082200D6CA20 /* CNXContact+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CNXContact+CoreDataProperties.h"; path = "EquiptiLity/CNXContact+CoreDataProperties.h"; sourceTree = "<group>"; };
+		6C9FEDF11D0B082200D6CA20 /* CNXContact+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CNXContact+CoreDataProperties.m"; path = "EquiptiLity/CNXContact+CoreDataProperties.m"; sourceTree = "<group>"; };
+		6C9FEDF21D0B082200D6CA20 /* CNXContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CNXContact.h; path = EquiptiLity/CNXContact.h; sourceTree = "<group>"; };
+		6C9FEDF31D0B082200D6CA20 /* CNXContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CNXContact.m; path = EquiptiLity/CNXContact.m; sourceTree = "<group>"; };
+		6C9FEDF81D0B087D00D6CA20 /* ContactManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactManager.h; path = ../ContactManager.h; sourceTree = "<group>"; };
+		6C9FEDF91D0B087D00D6CA20 /* ContactManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactManager.m; path = ../ContactManager.m; sourceTree = "<group>"; };
 		6CCEC2321D04D9BE00DB30C0 /* EquiptiLity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EquiptiLity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CCEC2361D04D9BE00DB30C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6CCEC2381D04D9BE00DB30C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -34,10 +50,6 @@
 		6CCEC2471D04D9BF00DB30C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6CCEC2491D04D9BF00DB30C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CCEC2541D05CA7F00DB30C0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		6CCEC2561D05CCFC00DB30C0 /* CNXEquipment+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CNXEquipment+CoreDataProperties.h"; sourceTree = "<group>"; };
-		6CCEC2571D05CCFC00DB30C0 /* CNXEquipment+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CNXEquipment+CoreDataProperties.m"; sourceTree = "<group>"; };
-		6CCEC2581D05CCFC00DB30C0 /* CNXEquipment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNXEquipment.h; sourceTree = "<group>"; };
-		6CCEC2591D05CCFC00DB30C0 /* CNXEquipment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNXEquipment.m; sourceTree = "<group>"; };
 		6CCEC25E1D05CF2500DB30C0 /* BrandEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrandEntryViewController.h; sourceTree = "<group>"; };
 		6CCEC25F1D05CF2500DB30C0 /* BrandEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrandEntryViewController.m; sourceTree = "<group>"; };
 		6CCEC2621D05D96900DB30C0 /* EquipmentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EquipmentsTableViewController.h; sourceTree = "<group>"; };
@@ -65,6 +77,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C9FEDB61D0972D500D6CA20 /* Icons+Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Icons+Assets";
+			sourceTree = "<group>";
+		};
+		6C9FEDFB1D0B08B200D6CA20 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				6C9FEDF81D0B087D00D6CA20 /* ContactManager.h */,
+				6C9FEDF91D0B087D00D6CA20 /* ContactManager.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
 		6CCEC2291D04D9BE00DB30C0 = {
 			isa = PBXGroup;
 			children = (
@@ -84,15 +112,16 @@
 		6CCEC2341D04D9BE00DB30C0 /* EquiptiLity */ = {
 			isa = PBXGroup;
 			children = (
+				6C9FEDFB1D0B08B200D6CA20 /* Managers */,
 				6CCEC2711D06D5F600DB30C0 /* CalculatorClass */,
 				6CCEC25D1D05CD2300DB30C0 /* AppDelegate */,
 				6CCEC25C1D05CD0500DB30C0 /* CoreDataManagedObjects-DO NOT TOUCH */,
 				6CCEC2541D05CA7F00DB30C0 /* Main.storyboard */,
 				6CCEC2611D05CF2E00DB30C0 /* ViewControllers */,
 				6CCEC2441D04D9BF00DB30C0 /* Assets.xcassets */,
+				6C9FEDB61D0972D500D6CA20 /* Icons+Assets */,
 				6CCEC2461D04D9BF00DB30C0 /* LaunchScreen.storyboard */,
 				6CCEC2491D04D9BF00DB30C0 /* Info.plist */,
-				6CCEC2721D06E77C00DB30C0 /* COREDATAMODEL */,
 				6CCEC2351D04D9BE00DB30C0 /* Supporting Files */,
 			);
 			path = EquiptiLity;
@@ -109,10 +138,15 @@
 		6CCEC25C1D05CD0500DB30C0 /* CoreDataManagedObjects-DO NOT TOUCH */ = {
 			isa = PBXGroup;
 			children = (
-				6CCEC2561D05CCFC00DB30C0 /* CNXEquipment+CoreDataProperties.h */,
-				6CCEC2571D05CCFC00DB30C0 /* CNXEquipment+CoreDataProperties.m */,
-				6CCEC2581D05CCFC00DB30C0 /* CNXEquipment.h */,
-				6CCEC2591D05CCFC00DB30C0 /* CNXEquipment.m */,
+				6CCEC2721D06E77C00DB30C0 /* COREDATAMODEL */,
+				6C9FEDEC1D0B082200D6CA20 /* CNXEquipment+CoreDataProperties.h */,
+				6C9FEDED1D0B082200D6CA20 /* CNXEquipment+CoreDataProperties.m */,
+				6C9FEDEE1D0B082200D6CA20 /* CNXEquipment.h */,
+				6C9FEDEF1D0B082200D6CA20 /* CNXEquipment.m */,
+				6C9FEDF01D0B082200D6CA20 /* CNXContact+CoreDataProperties.h */,
+				6C9FEDF11D0B082200D6CA20 /* CNXContact+CoreDataProperties.m */,
+				6C9FEDF21D0B082200D6CA20 /* CNXContact.h */,
+				6C9FEDF31D0B082200D6CA20 /* CNXContact.m */,
 			);
 			name = "CoreDataManagedObjects-DO NOT TOUCH";
 			path = ..;
@@ -142,6 +176,8 @@
 				6CCEC26B1D05FBEA00DB30C0 /* NoteEntryViewController.m */,
 				6CCEC2731D06EAFF00DB30C0 /* CalculateTotalViewController.h */,
 				6CCEC2741D06EAFF00DB30C0 /* CalculateTotalViewController.m */,
+				6C9FEDB31D087D4500D6CA20 /* CheckInViewController.h */,
+				6C9FEDB41D087D4500D6CA20 /* CheckInViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -161,6 +197,7 @@
 				6CCEC2411D04D9BF00DB30C0 /* EquiptiLity.xcdatamodeld */,
 			);
 			name = COREDATAMODEL;
+			path = EquiptiLity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,13 +271,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CCEC25A1D05CCFC00DB30C0 /* CNXEquipment+CoreDataProperties.m in Sources */,
 				6CCEC2691D05F28B00DB30C0 /* RateEntryViewController.m in Sources */,
 				6CCEC2641D05D96900DB30C0 /* EquipmentsTableViewController.m in Sources */,
-				6CCEC25B1D05CCFC00DB30C0 /* CNXEquipment.m in Sources */,
+				6C9FEDFA1D0B087D00D6CA20 /* ContactManager.m in Sources */,
+				6C9FEDF61D0B082200D6CA20 /* CNXContact+CoreDataProperties.m in Sources */,
 				6CCEC26F1D06D5DB00DB30C0 /* Calculator.m in Sources */,
+				6C9FEDF51D0B082200D6CA20 /* CNXEquipment.m in Sources */,
 				6CCEC23A1D04D9BE00DB30C0 /* AppDelegate.m in Sources */,
+				6C9FEDF41D0B082200D6CA20 /* CNXEquipment+CoreDataProperties.m in Sources */,
+				6C9FEDF71D0B082200D6CA20 /* CNXContact.m in Sources */,
 				6CCEC27B1D082B5F00DB30C0 /* EquipmentListTableViewCell.m in Sources */,
+				6C9FEDB51D087D4500D6CA20 /* CheckInViewController.m in Sources */,
 				6CCEC2601D05CF2500DB30C0 /* BrandEntryViewController.m in Sources */,
 				6CCEC26C1D05FBEA00DB30C0 /* NoteEntryViewController.m in Sources */,
 				6CCEC2371D04D9BE00DB30C0 /* main.m in Sources */,
@@ -392,6 +433,7 @@
 				6CCEC24E1D04D9BF00DB30C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

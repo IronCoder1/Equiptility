@@ -2,11 +2,12 @@
 //  CNXEquipment.m
 //  EquiptiLity
 //
-//  Created by MBPinTheAir on 06/06/2016.
+//  Created by MBPinTheAir on 10/06/2016.
 //  Copyright © 2016 moorsideinc. All rights reserved.
 //
 
 #import "CNXEquipment.h"
+#import "CNXContact.h"
 
 @implementation CNXEquipment
 

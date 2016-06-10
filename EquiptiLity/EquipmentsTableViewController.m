@@ -9,6 +9,7 @@
 #import "EquipmentsTableViewController.h"
 #import "CalculateTotalViewController.h"
 #import "EquipmentListTableViewCell.h"
+#import "CheckInViewController.h"
 
 
 
@@ -34,10 +35,14 @@
     
     self.title = @"Equipment List";
     self.appDelegate = [UIApplication sharedApplication].delegate ;
+    
+    
 }
 
 
 - (void)didReceiveMemoryWarning { [super didReceiveMemoryWarning]; }
+
+
 
 - (IBAction)addButtonTapped:(id)sender
 
@@ -48,6 +53,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]init];
     
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"CNXEquipment" inManagedObjectContext:_appDelegate.managedObjectContext];
@@ -88,8 +94,15 @@
 }
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    
     EquipmentListTableViewCell *cell = (EquipmentListTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"equipmentCell" forIndexPath:indexPath];
+    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+   // [cell setAccessoryView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"calculator"]]];
+
+    
     
     CNXEquipment *anEquipment = self.allEquipments[indexPath.row];
     cell.eBrandLabel.text = anEquipment.eBrandModel;
@@ -111,7 +124,6 @@
     NSString *dateString = [dateFormatted stringFromDate:anEquipment.returnDate];
     cell.retDateLabel.text  = [NSString stringWithFormat:@"Return Date: %@",dateString];
         cell.retDateLabel.textColor = [UIColor redColor];
-     //   cell.retDateLabel.font = [UIFont fontWithName:@"Menlo" size: 13];
     }
     return cell;
 }
@@ -135,8 +147,19 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"toBookingSegue" sender:nil];
-    
+    CNXEquipment *anEquipment = self.allEquipments[indexPath.row];
+    if (anEquipment.returnDate == nil)
+    {
+        [self performSegueWithIdentifier:@"toCheckOutSegue" sender:nil];
+    }
+    else
+    {
+    [self performSegueWithIdentifier:@"toCheckInSegue" sender:nil];
+    }
+}
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"toCheckOutSegue" sender:nil];
 }
 
 /*
@@ -176,18 +199,27 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    if ([segue.identifier isEqualToString:@"toBookingSegue"])
+    if ([segue.identifier isEqualToString:@"toCheckOutSegue"])
     {
     CalculateTotalViewController *ctvc = [segue destinationViewController];
-    NSIndexPath *newPath = [self.tableView indexPathForSelectedRow];
-    CNXEquipment *anEquipment = self.allEquipments[newPath.row];
-    ctvc.anEquipment = anEquipment;
+        NSIndexPath *newPath = [self.tableView indexPathForSelectedRow];
+        CNXEquipment *anEquipment = self.allEquipments[newPath.row];
+        ctvc.anEquipment = anEquipment;
     }
     
+    if ([segue.identifier isEqualToString:@"toCheckInSegue"])
+    {
+//        CheckInViewController *ciVC = [segue destinationViewController];
+        UINavigationController *navController = (UINavigationController *) segue.destinationViewController;
+       CheckInViewController *ciVC = (CheckInViewController *) navController.topViewController;
+        NSIndexPath *newPath = [self.tableView indexPathForSelectedRow];
+        CNXEquipment *anEquipment = self.allEquipments[newPath.row];
+        ciVC.anEquipment = anEquipment;
+    }
 }
-
 
 @end

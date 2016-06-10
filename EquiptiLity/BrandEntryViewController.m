@@ -14,7 +14,7 @@
 
 @interface BrandEntryViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *nextButtonOutlet;
-
+//@property (strong, nonatomic) NSArray *categoryArray;
 @end
 
 @implementation BrandEntryViewController
@@ -23,7 +23,7 @@
 {
     [super viewDidLoad];
     self.title = @"Add an Equipment";
-    // Do any additional setup after loading the view.
+  //  self.categoryArray = @[@"Accessories",@"Audio Location", @"Audio Studio", @"Cameras", @"Computer",@"Crew", @"Grip", @"Lenses", @"Lighting", @"Shooting Kits", @"Make Up Kit", @"Monitors",  @"Studios", @"Musical Instruments", @"Props", @"Prosthetics", @"Software"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,7 +67,11 @@
    
     return YES;
 }
-
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
 - (IBAction)nextTapped:(id)sender
 {
     
