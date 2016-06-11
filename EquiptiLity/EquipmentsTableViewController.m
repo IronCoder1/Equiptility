@@ -30,13 +30,11 @@
     return self;
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    
     self.title = @"Equipment List";
     self.appDelegate = [UIApplication sharedApplication].delegate ;
-    
-    
 }
 
 
@@ -45,7 +43,6 @@
 
 
 - (IBAction)addButtonTapped:(id)sender
-
 {
     [self performSegueWithIdentifier:@"toTextFieldSegue" sender:self];
 }
@@ -96,34 +93,28 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    
     EquipmentListTableViewCell *cell = (EquipmentListTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"equipmentCell" forIndexPath:indexPath];
-    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-   // [cell setAccessoryView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"calculator"]]];
-
-    
-    
     CNXEquipment *anEquipment = self.allEquipments[indexPath.row];
     cell.eBrandLabel.text = anEquipment.eBrandModel;
     cell.eBrandLabel.font = [UIFont fontWithName:@"Helvetica" size: 20];
     cell.eRateLabel.text = [NSString stringWithFormat:@"£%@ per day", anEquipment.eRate];
     cell.eRateLabel.textColor = [UIColor redColor];
-   // cell.eRateLabel.font = [UIFont fontWithName:@"Menlo" size: 16];
     if (anEquipment.returnDate == nil)
     {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        [cell setAccessoryView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"calculator"]]];
         cell.retDateLabel.text = @"Available Now";
         cell.retDateLabel.textColor = [UIColor greenColor];
-        //cell.retDateLabel.font = [UIFont fontWithName:@"Menlo" size: 13];
     }
     else
     {
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+         [cell setAccessoryView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"refresh"]]];
     NSDateFormatter *dateFormatted = [[NSDateFormatter alloc]init];
     [dateFormatted setDateStyle:NSDateFormatterMediumStyle];
-    
     NSString *dateString = [dateFormatted stringFromDate:anEquipment.returnDate];
     cell.retDateLabel.text  = [NSString stringWithFormat:@"Return Date: %@",dateString];
-        cell.retDateLabel.textColor = [UIColor redColor];
+    cell.retDateLabel.textColor = [UIColor redColor];
     }
     return cell;
 }
@@ -132,7 +123,7 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-        int row = (int)indexPath.row;
+        NSInteger row = indexPath.row;
         [self.allEquipments removeObjectAtIndex:row];
         [self.appDelegate.managedObjectContext deleteObject:self.allEquipments[row]];
         NSError *error = nil;

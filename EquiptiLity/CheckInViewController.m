@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.appDelegate   = [UIApplication sharedApplication].delegate;
-    self.title = @"Check Equipment In";
+    self.title = @"Lease Summary";
     self.equipmentLabel.text = self.anEquipment.eBrandModel;
     [self.noteView setScrollEnabled:YES];
     if (self.anEquipment.eNote == nil || [self.anEquipment.eNote isEqualToString:@""])
@@ -94,9 +94,9 @@
 {
     if (self.anEquipment.returnDate)
     {
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Hang On" message:@"Have you inspected equipment notes?" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Hang On" message:@"Have you inspected the equipment notes?" preferredStyle:UIAlertControllerStyleAlert];
         
-        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"YES" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Done" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
                              {
                                  self.anEquipment.returnDate = nil;
                                  NSError *error = nil;
@@ -104,7 +104,7 @@
                                  //[self.navigationController popViewControllerAnimated:YES];
                                  [self dismissViewControllerAnimated:YES completion:nil];
         }];
-        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"NO" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Back" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
                                  {NSLog(@"cancel tapped"); }];
         
         [alertController addAction:cancel];

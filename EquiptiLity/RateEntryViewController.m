@@ -22,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Enter Details";
     // Do any additional setup after loading the view.
 }
 
@@ -46,12 +47,13 @@
     
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     NSError *error = nil;
-    if ([self.rateTextField.text length] > 0 && [self.rateTextField.text floatValue] >0 && [self.rateTextField.text floatValue] <= 9999 && ![self.rateTextField.text isEqualToString:@""])
+    if ([self.rateTextField.text length] > 0 && [self.rateTextField.text intValue] >0 && [self.rateTextField.text floatValue] <= 9999 && ![self.rateTextField.text isEqualToString:@""])
     {
-        self.anEquipment.eRate = [NSNumber numberWithFloat:[self.rateTextField.text floatValue]];
+        self.anEquipment.eRate = [NSNumber numberWithInt:[self.rateTextField.text intValue]];
         self.anEquipment.eSerialNo = self.serialNoTextField.text;
-        
-       [appDelegate.managedObjectContext save:&error];
+        [appDelegate.managedObjectContext save:&error];
+        [self dismissViewControllerAnimated:YES completion:nil];
+
     }
     else{
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Oops!" message:@"You must enter a valid daily rate to continue" preferredStyle:UIAlertControllerStyleAlert];
@@ -61,26 +63,14 @@
         [alertController addAction:ok];
         [self presentViewController:alertController animated:YES completion:nil];
     }
-    
     if (error)
     {
         NSLog(@"error %@", [error localizedDescription]);
     }
-    
-    [self performSegueWithIdentifier:@"toNoteSegue" sender:self];
 }
 
 
 
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    NoteEntryViewController *noteVC = [segue destinationViewController];
-    noteVC.anEquipment = self.anEquipment;
-    
-}
-
+//#pragma mark - Navigation
 
 @end

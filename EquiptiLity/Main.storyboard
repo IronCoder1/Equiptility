@@ -16,11 +16,11 @@
                         <color key="backgroundColor" red="0.98392778635025024" green="0.99640446901321411" blue="0.98384779691696167" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.48160254955291748" green="0.91423201560974121" blue="0.7047351598739624" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="equipmentCell" rowHeight="65" id="rsc-UL-8lP" customClass="EquipmentListTableViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="equipmentCell" rowHeight="65" id="rsc-UL-8lP" customClass="EquipmentListTableViewCell">
                                 <rect key="frame" x="0.0" y="92" width="600" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rsc-UL-8lP" id="gSf-99-ufk">
-                                    <rect key="frame" x="0.0" y="0.0" width="533" height="64"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MjT-WG-f3R">
@@ -35,7 +35,7 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5B-aw-0HI">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5B-aw-0HI">
                                             <rect key="frame" x="494" y="43" width="31" height="15"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -181,7 +181,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tap to enter serial number..." minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vFl-l8-k3H">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tap to enter serial number if any..." minimumFontSize="15" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vFl-l8-k3H">
                                 <rect key="frame" x="15" y="154" width="570" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="done"/>
@@ -205,7 +205,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Equipment" id="miR-mu-OKJ">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="WnA-DR-uuQ">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="WnA-DR-uuQ">
                             <connections>
                                 <action selector="nextTapped:" destination="A0e-3u-SqS" id="81b-SF-LKT"/>
                             </connections>
@@ -215,7 +215,6 @@
                         <outlet property="nextButtonOutlet" destination="WnA-DR-uuQ" id="Ii6-hA-K8B"/>
                         <outlet property="rateTextField" destination="oKY-dS-en3" id="qVO-Fc-Xyb"/>
                         <outlet property="serialNoTextField" destination="vFl-l8-k3H" id="EKp-El-R6H"/>
-                        <segue destination="1kl-N5-gsQ" kind="show" identifier="toNoteSegue" id="Mqt-nE-iSe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wEu-SB-v2O" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -248,13 +247,20 @@
                             <constraint firstItem="uBk-o9-5dK" firstAttribute="width" secondItem="l9O-KJ-vt0" secondAttribute="width" multiplier="0.95" id="jGm-W4-wiX"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Add Equipment" id="c1I-MP-Txj">
+                        <barButtonItem key="leftBarButtonItem" title="Skip" id="bzf-Rl-1iu">
+                            <connections>
+                                <action selector="skipTapped:" destination="1kl-N5-gsQ" id="nml-GM-4Zo"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Vfq-Lq-c9V">
                             <connections>
                                 <action selector="saveTapped:" destination="1kl-N5-gsQ" id="pfh-JZ-9Ze"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="noteTextfield" destination="uBk-o9-5dK" id="r8h-yG-6XF"/>
                         <outlet property="saveButtonOutlet" destination="Vfq-Lq-c9V" id="ppQ-2V-lBb"/>
@@ -262,7 +268,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jzC-h5-Dmx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3582" y="235"/>
+            <point key="canvasLocation" x="3001" y="-490"/>
         </scene>
         <!--Calculate Total View Controller-->
         <scene sceneID="DXK-9z-Bqe">
@@ -327,6 +333,13 @@
                                     <action selector="checkoutTapped:" destination="xay-34-5pa" eventType="touchUpInside" id="45d-Ga-unB"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OW0-aF-aef">
+                                <rect key="frame" x="10" y="437" width="81" height="30"/>
+                                <state key="normal" title="Enter Notes"/>
+                                <connections>
+                                    <action selector="enterNotesButtonTapped:" destination="xay-34-5pa" eventType="touchUpInside" id="ggv-y6-kHZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -355,6 +368,7 @@
                         <outlet property="dailyRateLabel" destination="2X4-DC-IZR" id="HaQ-xj-76O"/>
                         <outlet property="retDateLabel" destination="eD1-Bf-PAp" id="kah-lP-WOz"/>
                         <outlet property="totalLabel" destination="pzm-Rb-VxP" id="wb2-Ri-GIR"/>
+                        <segue destination="1kl-N5-gsQ" kind="show" identifier="toNoteSegue" id="HFj-95-vod"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Axg-yQ-Iew" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -448,7 +462,7 @@
                                 <action selector="cancelButtonTapped:" destination="7s3-ti-U3p" id="K0h-Ff-ETB"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Xe3-hJ-yjt">
+                        <barButtonItem key="rightBarButtonItem" title="End Hire" id="Xe3-hJ-yjt">
                             <connections>
                                 <action selector="checkInButtonTapped:" destination="7s3-ti-U3p" id="hSm-v3-SM0"/>
                             </connections>
@@ -488,7 +502,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NcC-bd-khK"/>
+        <segue reference="hET-ro-zyN"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.5149325800570167" green="0.81176470588235294" blue="0.54358690308712632" alpha="1" colorSpace="calibratedRGB"/>
 </document>

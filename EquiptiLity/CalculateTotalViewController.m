@@ -10,7 +10,7 @@
 #import "Calculator.h"
 #import "AppDelegate.h"
 #import <CoreData/CoreData.h>
-
+#import "NoteEntryViewController.h"
 
 @interface CalculateTotalViewController ()
 {
@@ -26,6 +26,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *checkoutButtonTapped;
 - (IBAction)checkoutTapped:(id)sender;
 
+- (IBAction)enterNotesButtonTapped:(id)sender;
+
 @end
 
 @implementation CalculateTotalViewController
@@ -34,7 +36,7 @@
 {
     [super viewDidLoad];
     self.appDelegate = [UIApplication sharedApplication].delegate;
-    self.title = [NSString stringWithFormat:@"Hire %@", self.anEquipment.eBrandModel];
+    self.title = [NSString stringWithFormat:@"Start Hire %@", self.anEquipment.eBrandModel];
     self.daysArray = [[NSMutableArray alloc]initWithCapacity:0];
     for (int i = 1; i <= 66; i++)
     {
@@ -42,10 +44,10 @@
     }
     
     self.dailyRateLabel.text = [NSString stringWithFormat:@"Daily Rate: £ %d", [self.anEquipment.eRate intValue]];
-    if (self.anEquipment.returnDate != nil)
+    if (self.anEquipment.returnDate)
     {
         [self.checkoutButtonTapped setEnabled:NO];
-        [self.checkoutButtonTapped setTitle:@"Checked Out" forState:UIControlStateDisabled];
+        [self.checkoutButtonTapped setTitle:@"Hired Out" forState:UIControlStateDisabled];
     }
 }
 
@@ -53,6 +55,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma MARK Pickerview Delegates
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 1;
 }
@@ -75,7 +79,6 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    
     noOfDays = [self.daysArray[row] intValue];
   
     int total = [Calculator calcTotal:noOfDays with:[self.anEquipment.eRate intValue]];
@@ -87,20 +90,24 @@
     NSDate *retDate = [Calculator calcReturnDateByAddingDays:noOfDays];
     NSString *dateString = [dateFormatted stringFromDate:retDate];
     self.retDateLabel.text = [NSString stringWithFormat:@"Return Date: %@",dateString];
-    
 }
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+        NoteEntryViewController *noteVC = [segue destinationViewController];
+        noteVC.anEquipment = self.anEquipment;
 }
-*/
+
 
 #pragma MARK - User Action Methods
+
+- (IBAction)enterNotesButtonTapped:(id)sender
+{
+    [self performSegueWithIdentifier:@"toNoteSegue" sender:nil];
+}
 
 - (IBAction)checkoutTapped:(id)sender
 {
@@ -113,7 +120,7 @@
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Great!" message:@"The checkout was succesful" preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+            [self.navigationController popViewControllerAnimated:YES];
         }];
         [alertController addAction:ok];
         [self presentViewController:alertController animated:YES completion:nil];
@@ -122,14 +129,14 @@
         {
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Oops!" message:@"Sorry there as been a problem please go back and try again" preferredStyle:UIAlertControllerStyleAlert];
             
-            UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Back" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
             }];
             [alertController addAction:ok];
             [self presentViewController:alertController animated:YES completion:nil];
 
             NSLog(@"coredata could not saveee at line93 calculatetotal %@", [error localizedDescription]);
         }
-        
     }
 }
+
 @end

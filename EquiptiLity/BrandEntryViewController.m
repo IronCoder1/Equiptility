@@ -46,7 +46,6 @@
 
     if ([string isEqual:@""]) {
         [stringAfterApplyingChanges replaceCharactersInRange:range withString:string];
-//        [textField resignFirstResponder];
     } else {
         [stringAfterApplyingChanges insertString:string atIndex:range.location ];
         
@@ -82,7 +81,7 @@
         self.nwEquipment = [NSEntityDescription insertNewObjectForEntityForName:@"CNXEquipment" inManagedObjectContext:appDelegate.managedObjectContext];
         self.nwEquipment.eBrandModel = self.eBrandModelTextfield.text;
         
-        [appDelegate.managedObjectContext save:&error];
+      //  [appDelegate.managedObjectContext save:&error];
     }
     if (error)
     {
@@ -107,7 +106,6 @@
 {
     RateEntryViewController *rateVC = [segue destinationViewController];
     rateVC.anEquipment = self.nwEquipment;
-    
 }
 
 

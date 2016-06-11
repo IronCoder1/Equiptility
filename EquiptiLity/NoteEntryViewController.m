@@ -32,6 +32,10 @@
     [textField resignFirstResponder];
     return  YES;
 }
+- (IBAction)skipTapped:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (IBAction)saveTapped:(id)sender
 {
@@ -49,7 +53,7 @@
         NSLog(@"error %@", [error localizedDescription]);
     }
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 /*
 #pragma mark - Navigation

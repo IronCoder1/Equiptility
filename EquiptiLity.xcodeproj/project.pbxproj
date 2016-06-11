@@ -13,6 +13,9 @@
 		6C9FEDF61D0B082200D6CA20 /* CNXContact+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FEDF11D0B082200D6CA20 /* CNXContact+CoreDataProperties.m */; };
 		6C9FEDF71D0B082200D6CA20 /* CNXContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FEDF31D0B082200D6CA20 /* CNXContact.m */; };
 		6C9FEDFA1D0B087D00D6CA20 /* ContactManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FEDF91D0B087D00D6CA20 /* ContactManager.m */; };
+		6C9FEE021D0CA42200D6CA20 /* calculator.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FEE011D0CA42200D6CA20 /* calculator.png */; };
+		6C9FEE041D0CA6BB00D6CA20 /* checklist.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FEE031D0CA6BB00D6CA20 /* checklist.png */; };
+		6C9FEE061D0CB33100D6CA20 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FEE051D0CB33100D6CA20 /* refresh.png */; };
 		6CCEC2371D04D9BE00DB30C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC2361D04D9BE00DB30C0 /* main.m */; };
 		6CCEC23A1D04D9BE00DB30C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC2391D04D9BE00DB30C0 /* AppDelegate.m */; };
 		6CCEC2431D04D9BF00DB30C0 /* EquiptiLity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC2411D04D9BF00DB30C0 /* EquiptiLity.xcdatamodeld */; };
@@ -41,6 +44,9 @@
 		6C9FEDF31D0B082200D6CA20 /* CNXContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CNXContact.m; path = EquiptiLity/CNXContact.m; sourceTree = "<group>"; };
 		6C9FEDF81D0B087D00D6CA20 /* ContactManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactManager.h; path = ../ContactManager.h; sourceTree = "<group>"; };
 		6C9FEDF91D0B087D00D6CA20 /* ContactManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactManager.m; path = ../ContactManager.m; sourceTree = "<group>"; };
+		6C9FEE011D0CA42200D6CA20 /* calculator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calculator.png; sourceTree = "<group>"; };
+		6C9FEE031D0CA6BB00D6CA20 /* checklist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checklist.png; sourceTree = "<group>"; };
+		6C9FEE051D0CB33100D6CA20 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		6CCEC2321D04D9BE00DB30C0 /* EquiptiLity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EquiptiLity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CCEC2361D04D9BE00DB30C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6CCEC2381D04D9BE00DB30C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -80,6 +86,9 @@
 		6C9FEDB61D0972D500D6CA20 /* Icons+Assets */ = {
 			isa = PBXGroup;
 			children = (
+				6C9FEE011D0CA42200D6CA20 /* calculator.png */,
+				6C9FEE031D0CA6BB00D6CA20 /* checklist.png */,
+				6C9FEE051D0CB33100D6CA20 /* refresh.png */,
 			);
 			name = "Icons+Assets";
 			sourceTree = "<group>";
@@ -259,8 +268,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CCEC2551D05CA7F00DB30C0 /* Main.storyboard in Resources */,
+				6C9FEE061D0CB33100D6CA20 /* refresh.png in Resources */,
 				6CCEC2481D04D9BF00DB30C0 /* LaunchScreen.storyboard in Resources */,
 				6CCEC2451D04D9BF00DB30C0 /* Assets.xcassets in Resources */,
+				6C9FEE041D0CA6BB00D6CA20 /* checklist.png in Resources */,
+				6C9FEE021D0CA42200D6CA20 /* calculator.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
