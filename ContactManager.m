@@ -7,7 +7,16 @@
 //
 
 #import "ContactManager.h"
+@interface ContactManager ()
+
+@end
 
 @implementation ContactManager
+
+-(void)loadSetup
+{
+    
+    
+}
 
 @end

@@ -9,6 +9,7 @@
 #import "CheckInViewController.h"
 #import "Calculator.h"
 #import "CalculateTotalViewController.h"
+#import "CNXContact.h"
 
 @interface CheckInViewController ()
 - (IBAction)cancelButtonTapped:(id)sender;
@@ -20,6 +21,11 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *checkInButtonOutlet;
 @property  (strong, nonatomic) AppDelegate *appDelegate;
 - (IBAction)checkInButtonTapped:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *eImageView;
+@property (weak, nonatomic) IBOutlet UILabel *contactName;
+@property (weak, nonatomic) IBOutlet UILabel *contactPhone;
+- (IBAction)callButtonTapped:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *callButtonOutlet;
 
 @end
 
@@ -29,7 +35,12 @@
     [super viewDidLoad];
     self.appDelegate   = [UIApplication sharedApplication].delegate;
     self.title = @"Lease Summary";
+    self.contactName.text = self.anEquipment.cnxcontact.cGivenName;
+    self.contactPhone.text = self.anEquipment.cnxcontact.cIphoneNumber;
+    
     self.equipmentLabel.text = self.anEquipment.eBrandModel;
+   // UIImage *eImage = [UIImage imageWithContentsOfFile:self.anEquipment.eImageString];
+   // self.eImageView.image = eImage;
     [self.noteView setScrollEnabled:YES];
     if (self.anEquipment.eNote == nil || [self.anEquipment.eNote isEqualToString:@""])
     {
@@ -41,7 +52,7 @@
     }
     if ([self.anEquipment.eSerialNo isEqualToString:@""]) {
         self.serialNumberLabel.font = [UIFont systemFontOfSize:13 weight:0.01];
-        self.serialNumberLabel.text = @"No serial number on record";
+        self.serialNumberLabel.text = @"n/a";
     }
     else
     {
@@ -74,7 +85,25 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void)viewWillAppear:(BOOL)animated
+{
+    
+    CNXContact *contact = self.anEquipment.cnxcontact;
+    if ([contact.cIphoneNumber isEqualToString:@""] || !contact.cIphoneNumber)
+    {
+        self.callButtonOutlet.enabled = NO;
+        self.callButtonOutlet.tintColor = [UIColor blackColor];
+    }
+    
+    NSURL *telURL = [NSURL URLWithString:@"tel:"];
+    
+    if (NO == [[UIApplication sharedApplication] canOpenURL:telURL])
+    {
+        self.callButtonOutlet.enabled = NO;
+        NSLog(@"cannot openurl for call");
+    }
 
+}
 
 #pragma mark - Navigation
 
@@ -116,4 +145,14 @@
         [self performSegueWithIdentifier:@"toCheckOutSegue2" sender:nil];
     }
 }
+- (IBAction)callButtonTapped:(id)sender
+{
+    
+    NSString *URLEncodedTel = [self.anEquipment.cnxcontact.cIphoneNumber stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLPathAllowedCharacterSet]];
+    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",URLEncodedTel]];
+    [[UIApplication sharedApplication] openURL:URL];
+    NSLog(@"phone%@",URL);
+    
+}
+
 @end

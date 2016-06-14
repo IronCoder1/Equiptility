@@ -8,14 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		6C9FEDB51D087D4500D6CA20 /* CheckInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FEDB41D087D4500D6CA20 /* CheckInViewController.m */; };
-		6C9FEDF41D0B082200D6CA20 /* CNXEquipment+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FEDED1D0B082200D6CA20 /* CNXEquipment+CoreDataProperties.m */; };
 		6C9FEDF51D0B082200D6CA20 /* CNXEquipment.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FEDEF1D0B082200D6CA20 /* CNXEquipment.m */; };
-		6C9FEDF61D0B082200D6CA20 /* CNXContact+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FEDF11D0B082200D6CA20 /* CNXContact+CoreDataProperties.m */; };
 		6C9FEDF71D0B082200D6CA20 /* CNXContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FEDF31D0B082200D6CA20 /* CNXContact.m */; };
 		6C9FEDFA1D0B087D00D6CA20 /* ContactManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FEDF91D0B087D00D6CA20 /* ContactManager.m */; };
 		6C9FEE021D0CA42200D6CA20 /* calculator.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FEE011D0CA42200D6CA20 /* calculator.png */; };
-		6C9FEE041D0CA6BB00D6CA20 /* checklist.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FEE031D0CA6BB00D6CA20 /* checklist.png */; };
 		6C9FEE061D0CB33100D6CA20 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FEE051D0CB33100D6CA20 /* refresh.png */; };
+		6C9FEE0B1D0CBEDE00D6CA20 /* CNXContact+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FEE081D0CBEDE00D6CA20 /* CNXContact+CoreDataProperties.m */; };
+		6C9FEE0C1D0CBEDE00D6CA20 /* CNXEquipment+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FEE0A1D0CBEDE00D6CA20 /* CNXEquipment+CoreDataProperties.m */; };
+		6C9FEE141D0E02E000D6CA20 /* buttonbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FEE131D0E02DF00D6CA20 /* buttonbackground.png */; };
+		6C9FEE161D0E051400D6CA20 /* buttonbackgroundLightgreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FEE151D0E051400D6CA20 /* buttonbackgroundLightgreen.png */; };
+		6C9FEE181D0E34E500D6CA20 /* slr_large_lens.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FEE171D0E34E500D6CA20 /* slr_large_lens.png */; };
+		6C9FEE1A1D0E34ED00D6CA20 /* large_lens.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FEE191D0E34ED00D6CA20 /* large_lens.png */; };
+		6C9FEE1C1D0E34FE00D6CA20 /* movie_projector.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FEE1B1D0E34FE00D6CA20 /* movie_projector.png */; };
+		6C9FEE1E1D0E351200D6CA20 /* slr_small_lens.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FEE1D1D0E351200D6CA20 /* slr_small_lens.png */; };
+		6C9FEE201D0E354100D6CA20 /* clapperboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FEE1F1D0E354100D6CA20 /* clapperboard.png */; };
+		6C9FEE221D0E35A500D6CA20 /* drone_with_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FEE211D0E35A500D6CA20 /* drone_with_camera.png */; };
+		6C9FEE271D0EB90000D6CA20 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FEE261D0EB90000D6CA20 /* ContactViewController.m */; };
+		6C9FEE2D1D0F041400D6CA20 /* add_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FEE2C1D0F041400D6CA20 /* add_camera.png */; };
+		6C9FEE2F1D0F042600D6CA20 /* add_user_male.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FEE2E1D0F042600D6CA20 /* add_user_male.png */; };
+		6C9FEE311D0F046E00D6CA20 /* add_rule.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FEE301D0F046E00D6CA20 /* add_rule.png */; };
 		6CCEC2371D04D9BE00DB30C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC2361D04D9BE00DB30C0 /* main.m */; };
 		6CCEC23A1D04D9BE00DB30C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC2391D04D9BE00DB30C0 /* AppDelegate.m */; };
 		6CCEC2431D04D9BF00DB30C0 /* EquiptiLity.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEC2411D04D9BF00DB30C0 /* EquiptiLity.xcdatamodeld */; };
@@ -34,19 +45,31 @@
 /* Begin PBXFileReference section */
 		6C9FEDB31D087D4500D6CA20 /* CheckInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInViewController.h; sourceTree = "<group>"; };
 		6C9FEDB41D087D4500D6CA20 /* CheckInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInViewController.m; sourceTree = "<group>"; };
-		6C9FEDEC1D0B082200D6CA20 /* CNXEquipment+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CNXEquipment+CoreDataProperties.h"; path = "EquiptiLity/CNXEquipment+CoreDataProperties.h"; sourceTree = "<group>"; };
-		6C9FEDED1D0B082200D6CA20 /* CNXEquipment+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CNXEquipment+CoreDataProperties.m"; path = "EquiptiLity/CNXEquipment+CoreDataProperties.m"; sourceTree = "<group>"; };
 		6C9FEDEE1D0B082200D6CA20 /* CNXEquipment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CNXEquipment.h; path = EquiptiLity/CNXEquipment.h; sourceTree = "<group>"; };
 		6C9FEDEF1D0B082200D6CA20 /* CNXEquipment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CNXEquipment.m; path = EquiptiLity/CNXEquipment.m; sourceTree = "<group>"; };
-		6C9FEDF01D0B082200D6CA20 /* CNXContact+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CNXContact+CoreDataProperties.h"; path = "EquiptiLity/CNXContact+CoreDataProperties.h"; sourceTree = "<group>"; };
-		6C9FEDF11D0B082200D6CA20 /* CNXContact+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CNXContact+CoreDataProperties.m"; path = "EquiptiLity/CNXContact+CoreDataProperties.m"; sourceTree = "<group>"; };
 		6C9FEDF21D0B082200D6CA20 /* CNXContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CNXContact.h; path = EquiptiLity/CNXContact.h; sourceTree = "<group>"; };
 		6C9FEDF31D0B082200D6CA20 /* CNXContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CNXContact.m; path = EquiptiLity/CNXContact.m; sourceTree = "<group>"; };
 		6C9FEDF81D0B087D00D6CA20 /* ContactManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactManager.h; path = ../ContactManager.h; sourceTree = "<group>"; };
 		6C9FEDF91D0B087D00D6CA20 /* ContactManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactManager.m; path = ../ContactManager.m; sourceTree = "<group>"; };
 		6C9FEE011D0CA42200D6CA20 /* calculator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calculator.png; sourceTree = "<group>"; };
-		6C9FEE031D0CA6BB00D6CA20 /* checklist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checklist.png; sourceTree = "<group>"; };
 		6C9FEE051D0CB33100D6CA20 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
+		6C9FEE071D0CBEDE00D6CA20 /* CNXContact+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CNXContact+CoreDataProperties.h"; path = "EquiptiLity/CNXContact+CoreDataProperties.h"; sourceTree = "<group>"; };
+		6C9FEE081D0CBEDE00D6CA20 /* CNXContact+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CNXContact+CoreDataProperties.m"; path = "EquiptiLity/CNXContact+CoreDataProperties.m"; sourceTree = "<group>"; };
+		6C9FEE091D0CBEDE00D6CA20 /* CNXEquipment+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CNXEquipment+CoreDataProperties.h"; path = "EquiptiLity/CNXEquipment+CoreDataProperties.h"; sourceTree = "<group>"; };
+		6C9FEE0A1D0CBEDE00D6CA20 /* CNXEquipment+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CNXEquipment+CoreDataProperties.m"; path = "EquiptiLity/CNXEquipment+CoreDataProperties.m"; sourceTree = "<group>"; };
+		6C9FEE131D0E02DF00D6CA20 /* buttonbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonbackground.png; sourceTree = "<group>"; };
+		6C9FEE151D0E051400D6CA20 /* buttonbackgroundLightgreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonbackgroundLightgreen.png; sourceTree = "<group>"; };
+		6C9FEE171D0E34E500D6CA20 /* slr_large_lens.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slr_large_lens.png; sourceTree = "<group>"; };
+		6C9FEE191D0E34ED00D6CA20 /* large_lens.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = large_lens.png; sourceTree = "<group>"; };
+		6C9FEE1B1D0E34FE00D6CA20 /* movie_projector.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movie_projector.png; sourceTree = "<group>"; };
+		6C9FEE1D1D0E351200D6CA20 /* slr_small_lens.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slr_small_lens.png; sourceTree = "<group>"; };
+		6C9FEE1F1D0E354100D6CA20 /* clapperboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clapperboard.png; sourceTree = "<group>"; };
+		6C9FEE211D0E35A500D6CA20 /* drone_with_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drone_with_camera.png; sourceTree = "<group>"; };
+		6C9FEE251D0EB90000D6CA20 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
+		6C9FEE261D0EB90000D6CA20 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
+		6C9FEE2C1D0F041400D6CA20 /* add_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_camera.png; sourceTree = "<group>"; };
+		6C9FEE2E1D0F042600D6CA20 /* add_user_male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_user_male.png; sourceTree = "<group>"; };
+		6C9FEE301D0F046E00D6CA20 /* add_rule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_rule.png; sourceTree = "<group>"; };
 		6CCEC2321D04D9BE00DB30C0 /* EquiptiLity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EquiptiLity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CCEC2361D04D9BE00DB30C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6CCEC2381D04D9BE00DB30C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -86,8 +109,18 @@
 		6C9FEDB61D0972D500D6CA20 /* Icons+Assets */ = {
 			isa = PBXGroup;
 			children = (
+				6C9FEE301D0F046E00D6CA20 /* add_rule.png */,
+				6C9FEE2E1D0F042600D6CA20 /* add_user_male.png */,
+				6C9FEE2C1D0F041400D6CA20 /* add_camera.png */,
+				6C9FEE211D0E35A500D6CA20 /* drone_with_camera.png */,
+				6C9FEE1F1D0E354100D6CA20 /* clapperboard.png */,
+				6C9FEE1D1D0E351200D6CA20 /* slr_small_lens.png */,
+				6C9FEE1B1D0E34FE00D6CA20 /* movie_projector.png */,
+				6C9FEE191D0E34ED00D6CA20 /* large_lens.png */,
+				6C9FEE171D0E34E500D6CA20 /* slr_large_lens.png */,
+				6C9FEE151D0E051400D6CA20 /* buttonbackgroundLightgreen.png */,
+				6C9FEE131D0E02DF00D6CA20 /* buttonbackground.png */,
 				6C9FEE011D0CA42200D6CA20 /* calculator.png */,
-				6C9FEE031D0CA6BB00D6CA20 /* checklist.png */,
 				6C9FEE051D0CB33100D6CA20 /* refresh.png */,
 			);
 			name = "Icons+Assets";
@@ -148,14 +181,14 @@
 			isa = PBXGroup;
 			children = (
 				6CCEC2721D06E77C00DB30C0 /* COREDATAMODEL */,
-				6C9FEDEC1D0B082200D6CA20 /* CNXEquipment+CoreDataProperties.h */,
-				6C9FEDED1D0B082200D6CA20 /* CNXEquipment+CoreDataProperties.m */,
 				6C9FEDEE1D0B082200D6CA20 /* CNXEquipment.h */,
 				6C9FEDEF1D0B082200D6CA20 /* CNXEquipment.m */,
-				6C9FEDF01D0B082200D6CA20 /* CNXContact+CoreDataProperties.h */,
-				6C9FEDF11D0B082200D6CA20 /* CNXContact+CoreDataProperties.m */,
 				6C9FEDF21D0B082200D6CA20 /* CNXContact.h */,
 				6C9FEDF31D0B082200D6CA20 /* CNXContact.m */,
+				6C9FEE071D0CBEDE00D6CA20 /* CNXContact+CoreDataProperties.h */,
+				6C9FEE081D0CBEDE00D6CA20 /* CNXContact+CoreDataProperties.m */,
+				6C9FEE091D0CBEDE00D6CA20 /* CNXEquipment+CoreDataProperties.h */,
+				6C9FEE0A1D0CBEDE00D6CA20 /* CNXEquipment+CoreDataProperties.m */,
 			);
 			name = "CoreDataManagedObjects-DO NOT TOUCH";
 			path = ..;
@@ -173,6 +206,8 @@
 		6CCEC2611D05CF2E00DB30C0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				6C9FEE251D0EB90000D6CA20 /* ContactViewController.h */,
+				6C9FEE261D0EB90000D6CA20 /* ContactViewController.m */,
 				6CCEC2621D05D96900DB30C0 /* EquipmentsTableViewController.h */,
 				6CCEC2631D05D96900DB30C0 /* EquipmentsTableViewController.m */,
 				6CCEC2791D082B5F00DB30C0 /* EquipmentListTableViewCell.h */,
@@ -267,12 +302,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C9FEE2D1D0F041400D6CA20 /* add_camera.png in Resources */,
 				6CCEC2551D05CA7F00DB30C0 /* Main.storyboard in Resources */,
 				6C9FEE061D0CB33100D6CA20 /* refresh.png in Resources */,
+				6C9FEE201D0E354100D6CA20 /* clapperboard.png in Resources */,
+				6C9FEE1E1D0E351200D6CA20 /* slr_small_lens.png in Resources */,
+				6C9FEE221D0E35A500D6CA20 /* drone_with_camera.png in Resources */,
 				6CCEC2481D04D9BF00DB30C0 /* LaunchScreen.storyboard in Resources */,
+				6C9FEE1C1D0E34FE00D6CA20 /* movie_projector.png in Resources */,
 				6CCEC2451D04D9BF00DB30C0 /* Assets.xcassets in Resources */,
-				6C9FEE041D0CA6BB00D6CA20 /* checklist.png in Resources */,
+				6C9FEE2F1D0F042600D6CA20 /* add_user_male.png in Resources */,
 				6C9FEE021D0CA42200D6CA20 /* calculator.png in Resources */,
+				6C9FEE161D0E051400D6CA20 /* buttonbackgroundLightgreen.png in Resources */,
+				6C9FEE1A1D0E34ED00D6CA20 /* large_lens.png in Resources */,
+				6C9FEE141D0E02E000D6CA20 /* buttonbackground.png in Resources */,
+				6C9FEE181D0E34E500D6CA20 /* slr_large_lens.png in Resources */,
+				6C9FEE311D0F046E00D6CA20 /* add_rule.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,14 +329,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CCEC2691D05F28B00DB30C0 /* RateEntryViewController.m in Sources */,
+				6C9FEE0B1D0CBEDE00D6CA20 /* CNXContact+CoreDataProperties.m in Sources */,
 				6CCEC2641D05D96900DB30C0 /* EquipmentsTableViewController.m in Sources */,
 				6C9FEDFA1D0B087D00D6CA20 /* ContactManager.m in Sources */,
-				6C9FEDF61D0B082200D6CA20 /* CNXContact+CoreDataProperties.m in Sources */,
 				6CCEC26F1D06D5DB00DB30C0 /* Calculator.m in Sources */,
 				6C9FEDF51D0B082200D6CA20 /* CNXEquipment.m in Sources */,
+				6C9FEE271D0EB90000D6CA20 /* ContactViewController.m in Sources */,
 				6CCEC23A1D04D9BE00DB30C0 /* AppDelegate.m in Sources */,
-				6C9FEDF41D0B082200D6CA20 /* CNXEquipment+CoreDataProperties.m in Sources */,
 				6C9FEDF71D0B082200D6CA20 /* CNXContact.m in Sources */,
+				6C9FEE0C1D0CBEDE00D6CA20 /* CNXEquipment+CoreDataProperties.m in Sources */,
 				6CCEC27B1D082B5F00DB30C0 /* EquipmentListTableViewCell.m in Sources */,
 				6C9FEDB51D087D4500D6CA20 /* CheckInViewController.m in Sources */,
 				6CCEC2601D05CF2500DB30C0 /* BrandEntryViewController.m in Sources */,

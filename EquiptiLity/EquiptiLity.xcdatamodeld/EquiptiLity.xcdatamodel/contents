@@ -9,7 +9,7 @@
     </entity>
     <entity name="CNXEquipment" representedClassName="CNXEquipment" syncable="YES">
         <attribute name="eBrandModel" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="eImageString" optional="YES" syncable="YES"/>
+        <attribute name="eImageString" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="eNote" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="eRate" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="eSerialNo" optional="YES" attributeType="String" syncable="YES"/>

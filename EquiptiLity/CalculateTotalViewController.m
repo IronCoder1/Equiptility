@@ -11,8 +11,10 @@
 #import "AppDelegate.h"
 #import <CoreData/CoreData.h>
 #import "NoteEntryViewController.h"
+#import "CNXContact.h"
+@import ContactsUI;
 
-@interface CalculateTotalViewController ()
+@interface CalculateTotalViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate, CNContactPickerDelegate>
 {
     int noOfDays;
 }
@@ -27,6 +29,9 @@
 - (IBAction)checkoutTapped:(id)sender;
 
 - (IBAction)enterNotesButtonTapped:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *addPhotoButtonTapped;
+- (IBAction)addPhotoButtonTapped:(id)sender;
+- (IBAction)addClientButtonTapped:(id)sender;
 
 @end
 
@@ -35,15 +40,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.appDelegate = [UIApplication sharedApplication].delegate;
-    self.title = [NSString stringWithFormat:@"Start Hire %@", self.anEquipment.eBrandModel];
+    self.title = [NSString stringWithFormat:@"Start Hire on %@", self.anEquipment.eBrandModel];
     self.daysArray = [[NSMutableArray alloc]initWithCapacity:0];
     for (int i = 1; i <= 66; i++)
     {
         [self.daysArray addObject:[NSNumber numberWithInt:i]];
     }
     
-    self.dailyRateLabel.text = [NSString stringWithFormat:@"Daily Rate: £ %d", [self.anEquipment.eRate intValue]];
+    self.dailyRateLabel.text = [NSString stringWithFormat:@"£%d", [self.anEquipment.eRate intValue]];
     if (self.anEquipment.returnDate)
     {
         [self.checkoutButtonTapped setEnabled:NO];
@@ -57,7 +63,8 @@
 }
 
 #pragma MARK Pickerview Delegates
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
     return 1;
 }
 - (NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent: (NSInteger) component
@@ -89,7 +96,7 @@
     
     NSDate *retDate = [Calculator calcReturnDateByAddingDays:noOfDays];
     NSString *dateString = [dateFormatted stringFromDate:retDate];
-    self.retDateLabel.text = [NSString stringWithFormat:@"Return Date: %@",dateString];
+    self.retDateLabel.text = [NSString stringWithFormat:@"%@",dateString];
 }
 
 
@@ -111,7 +118,6 @@
 
 - (IBAction)checkoutTapped:(id)sender
 {
-  
     if (self.anEquipment.returnDate == nil)
     {
         self.anEquipment.returnDate = [Calculator calcReturnDateByAddingDays:noOfDays];
@@ -124,7 +130,7 @@
         }];
         [alertController addAction:ok];
         [self presentViewController:alertController animated:YES completion:nil];
-
+        
         if (error)
         {
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Oops!" message:@"Sorry there as been a problem please go back and try again" preferredStyle:UIAlertControllerStyleAlert];
@@ -133,10 +139,91 @@
             }];
             [alertController addAction:ok];
             [self presentViewController:alertController animated:YES completion:nil];
-
+            
             NSLog(@"coredata could not saveee at line93 calculatetotal %@", [error localizedDescription]);
         }
     }
 }
+- (IBAction)addPhotoButtonTapped:(id)sender
+{
+        UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Add Equipment photo" message:@"Please make a selection below" preferredStyle:UIAlertControllerStyleActionSheet];
+    
+        UIImagePickerController *picker = [[UIImagePickerController alloc]init];
+        picker.delegate = self;
+        picker.allowsEditing = NO;
+        UIAlertAction *option1 = [UIAlertAction actionWithTitle:@"Use Camera" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action)
+        {
+            NSLog(@"Option 1 was tapped");
+                picker.allowsEditing = NO;
+                picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+                [self presentViewController:picker animated:YES completion:nil];
+        }];
+    
+        UIAlertAction *option2 = [UIAlertAction actionWithTitle:@"Open Photo Library" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
+        {
+            NSLog(@"Option 2 was tapped");
+            picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            [self presentViewController:picker animated:YES completion:nil];
+        }];
+        UIAlertAction *option3 = [UIAlertAction actionWithTitle:@"Open Photo Album" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
+        {
+            NSLog(@"Option 3 was tapped");
+            picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+            [self presentViewController:picker animated:YES completion:nil];
+        }];
+    
+        [actionSheet addAction:option1];
+        [actionSheet addAction:option2];
+        [actionSheet addAction:option3];
+        [self presentViewController:actionSheet animated:YES completion:nil];
+}
 
+- (IBAction)addClientButtonTapped:(id)sender
+{
+    CNContactPickerViewController *cnpvc = [[CNContactPickerViewController alloc]init];
+    cnpvc.delegate = self;
+    [self presentViewController:cnpvc animated:YES completion:nil];
+}
+
+-(void)contactPicker:(CNContactPickerViewController *)picker didSelectContact:(CNContact *)contact
+{
+    CNXContact *cnxcontact = [NSEntityDescription insertNewObjectForEntityForName:@"CNXContact" inManagedObjectContext:self.appDelegate.managedObjectContext];
+    cnxcontact.cGivenName = contact.givenName;
+    cnxcontact.cFamilyName = contact.familyName;
+    NSArray *phoneNumbers = contact.phoneNumbers;
+    cnxcontact.cIphoneNumber = [[(CNLabeledValue*)phoneNumbers.firstObject value] stringValue];
+    NSArray *emailAddresses = contact.emailAddresses;
+    cnxcontact.cEmailAddress = [(CNLabeledValue*)emailAddresses.firstObject value];
+    NSLog(@"contacts %@", cnxcontact.cEmailAddress);
+    self.anEquipment.cnxcontact = cnxcontact;
+}
+
+
+
+#pragma mark  - private methods
+
+-(NSString *)saveImageToDisk
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSUUID *uuID = [NSUUID UUID];
+    NSString *secondBaseString = [NSString stringWithFormat:@"%@.png",[uuID UUIDString]];
+    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:secondBaseString];
+    UIImage *newImage;
+    [UIImagePNGRepresentation(newImage) writeToFile:filePath atomically:YES];
+    NSLog(@"file path %@", filePath);
+    return filePath;
+}
+
+#pragma mark - ImagePicker Delegate Methods
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    UIImage *itemImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+   self.anEquipment.eImageString = [self saveImageToDisk];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end
