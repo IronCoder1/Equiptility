@@ -32,23 +32,22 @@
 }
 -(void)viewWillAppear:(BOOL)animated
 {
-    
     [self.eBrandModelTextfield becomeFirstResponder];
-    
 }
 
 #pragma mark - Text field delegate
 
--(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
     
-   
     NSMutableString *stringAfterApplyingChanges = [[NSMutableString alloc] initWithString:textField.text];
 
-    if ([string isEqual:@""]) {
+    if ([string isEqual:@""])
+    {
         [stringAfterApplyingChanges replaceCharactersInRange:range withString:string];
-    } else {
+    } else
+    {
         [stringAfterApplyingChanges insertString:string atIndex:range.location ];
-        
     }
 
     
@@ -59,11 +58,7 @@
     else
     {
         [self.nextButtonOutlet setEnabled:NO];
-        
     }
-    
-//    [self.nextButtonOutlet setEnabled:[ValidationHelper isTextValid:textfield.text afterApplyingChangeAtRange: range withReplacementString: string]
-   
     return YES;
 }
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -73,15 +68,12 @@
 }
 - (IBAction)nextTapped:(id)sender
 {
-    
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     NSError *error = nil;
     if (![self.eBrandModelTextfield.text isEqualToString:@""])
     {
         self.nwEquipment = [NSEntityDescription insertNewObjectForEntityForName:@"CNXEquipment" inManagedObjectContext:appDelegate.managedObjectContext];
         self.nwEquipment.eBrandModel = self.eBrandModelTextfield.text;
-        
-      //  [appDelegate.managedObjectContext save:&error];
     }
     if (error)
     {
@@ -96,12 +88,10 @@
 - (IBAction)cancelAdding:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
-    
 }
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     RateEntryViewController *rateVC = [segue destinationViewController];

@@ -155,7 +155,6 @@
 
 -(IBAction)confirmHireButtonTapped:(id)sender
 {
-    [self performSegueWithIdentifier:@"toTestSegue" sender:nil];
     if (self.anEquipment.cnxcontact)
     {
         NSError *error = nil;
@@ -163,7 +162,7 @@
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Great!" message:@"The checkout was succesful" preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            [self.navigationController popViewControllerAnimated:YES];
+            [self.navigationController popToRootViewControllerAnimated:YES];
         }];
         [alertController addAction:ok];
         [self presentViewController:alertController animated:YES completion:nil];
@@ -179,6 +178,7 @@
             NSLog(@"coredata could not saveee at line93 confirmvc %@", [error localizedDescription]);
         }
     }
+    
 }
 
 -(void)updateImageView

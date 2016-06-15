@@ -15,7 +15,6 @@
 - (IBAction)cancelButtonTapped:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *equipmentLabel;
 @property (weak, nonatomic) IBOutlet UITextView *noteView;
-
 @property (weak, nonatomic) IBOutlet UILabel *serialNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *returnDateLabel;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *checkInButtonOutlet;
@@ -37,10 +36,7 @@
     self.title = @"Lease Summary";
     self.contactName.text = self.anEquipment.cnxcontact.cGivenName;
     self.contactPhone.text = self.anEquipment.cnxcontact.cIphoneNumber;
-    
     self.equipmentLabel.text = self.anEquipment.eBrandModel;
-   // UIImage *eImage = [UIImage imageWithContentsOfFile:self.anEquipment.eImageString];
-   // self.eImageView.image = eImage;
     [self.noteView setScrollEnabled:YES];
     if (self.anEquipment.eNote == nil || [self.anEquipment.eNote isEqualToString:@""])
     {
@@ -64,21 +60,14 @@
     NSString *dateString = [dateFormatted stringFromDate:self.anEquipment.returnDate];
     self.returnDateLabel.text = [NSString stringWithFormat:@"Return Date: %@",dateString];
     
-    if (self.anEquipment.returnDate != nil)
+    if (self.anEquipment.startDate)
     {
         [self.checkInButtonOutlet setEnabled:YES];
     }
-//    else
-//    {
-//        [self.checkInButtonOutlet setEnabled:YES];
-//        
-//        //[self.checkInButtonOutlet setTitle:@"Check Out" forState: UIControlStateNormal];
-//        self.returnDateLabel.font = [UIFont systemFontOfSize:12 weight:0.01];
-//        self.returnDateLabel.text = @"This gear is available";
-//    }
-    
-    
-
+    else
+    {
+        [self.checkInButtonOutlet setEnabled:NO];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -87,7 +76,7 @@
 }
 -(void)viewWillAppear:(BOOL)animated
 {
-    
+    self.eImageView.image = [UIImage imageWithContentsOfFile:self.anEquipment.eImageString];
     CNXContact *contact = self.anEquipment.cnxcontact;
     if ([contact.cIphoneNumber isEqualToString:@""] || !contact.cIphoneNumber)
     {
@@ -102,8 +91,6 @@
         self.callButtonOutlet.enabled = NO;
         NSLog(@"cannot openurl for call");
     }
-    self.eImageView.image = [UIImage imageWithContentsOfFile:self.anEquipment.eImageString];
-
 }
 
 #pragma mark - Navigation
@@ -118,7 +105,7 @@
 
 - (IBAction)cancelButtonTapped:(id)sender
 {
-[self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)checkInButtonTapped:(id)sender
 {
@@ -129,11 +116,11 @@
         UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Done" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
                              {
                                  self.anEquipment.returnDate = nil;
+                                 self.anEquipment.startDate = nil;
                                  NSError *error = nil;
                                  [self.appDelegate.managedObjectContext save:&error];
-                                 //[self.navigationController popViewControllerAnimated:YES];
                                  [self dismissViewControllerAnimated:YES completion:nil];
-        }];
+                             }];
         UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Back" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
                                  {NSLog(@"cancel tapped"); }];
         

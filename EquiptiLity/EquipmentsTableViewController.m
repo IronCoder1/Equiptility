@@ -129,7 +129,7 @@
         NSError *error = nil;
         [self.appDelegate.managedObjectContext save:&error];
         if (error) {
-            NSLog(@"coredata could not saveee at line 116 equpmentvc%@", [error localizedDescription]);
+            NSLog(@"coredata could not save equipmentvc%@", [error localizedDescription]);
         }
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
@@ -139,19 +139,21 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CNXEquipment *anEquipment = self.allEquipments[indexPath.row];
-    if (anEquipment.returnDate == nil)
+
+    NSComparisonResult compareDates = [anEquipment.startDate compare:[NSDate date]];
+    if ((compareDates == NSOrderedDescending) || anEquipment.startDate == nil)
     {
         [self performSegueWithIdentifier:@"toCheckOutSegue" sender:nil];
     }
     else
     {
-    [self performSegueWithIdentifier:@"toCheckInSegue" sender:nil];
+        [self performSegueWithIdentifier:@"toCheckInSegue" sender:nil];
     }
 }
--(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
-{
-    [self performSegueWithIdentifier:@"toCheckOutSegue" sender:nil];
-}
+//-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+//{
+//    [self performSegueWithIdentifier:@"toCheckOutSegue" sender:nil];
+//}
 
 /*
 // Override to support conditional editing of the table view.

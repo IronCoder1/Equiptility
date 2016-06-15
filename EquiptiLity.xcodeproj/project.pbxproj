@@ -21,7 +21,6 @@
 		6C9FEE1E1D0E351200D6CA20 /* slr_small_lens.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FEE1D1D0E351200D6CA20 /* slr_small_lens.png */; };
 		6C9FEE201D0E354100D6CA20 /* clapperboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FEE1F1D0E354100D6CA20 /* clapperboard.png */; };
 		6C9FEE221D0E35A500D6CA20 /* drone_with_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FEE211D0E35A500D6CA20 /* drone_with_camera.png */; };
-		6C9FEE271D0EB90000D6CA20 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FEE261D0EB90000D6CA20 /* ContactViewController.m */; };
 		6C9FEE2D1D0F041400D6CA20 /* add_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C9FEE2C1D0F041400D6CA20 /* add_camera.png */; };
 		6C9FEE381D10117F00D6CA20 /* ConfirmHireViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FEE371D10117F00D6CA20 /* ConfirmHireViewController.m */; };
 		6C9FEE3D1D101E9000D6CA20 /* CNXEquipment+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9FEE3A1D101E9000D6CA20 /* CNXEquipment+CoreDataProperties.m */; };
@@ -59,8 +58,6 @@
 		6C9FEE1D1D0E351200D6CA20 /* slr_small_lens.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slr_small_lens.png; sourceTree = "<group>"; };
 		6C9FEE1F1D0E354100D6CA20 /* clapperboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clapperboard.png; sourceTree = "<group>"; };
 		6C9FEE211D0E35A500D6CA20 /* drone_with_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drone_with_camera.png; sourceTree = "<group>"; };
-		6C9FEE251D0EB90000D6CA20 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
-		6C9FEE261D0EB90000D6CA20 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
 		6C9FEE2C1D0F041400D6CA20 /* add_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_camera.png; sourceTree = "<group>"; };
 		6C9FEE361D10117F00D6CA20 /* ConfirmHireViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmHireViewController.h; sourceTree = "<group>"; };
 		6C9FEE371D10117F00D6CA20 /* ConfirmHireViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmHireViewController.m; sourceTree = "<group>"; };
@@ -205,8 +202,6 @@
 		6CCEC2611D05CF2E00DB30C0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				6C9FEE251D0EB90000D6CA20 /* ContactViewController.h */,
-				6C9FEE261D0EB90000D6CA20 /* ContactViewController.m */,
 				6CCEC2621D05D96900DB30C0 /* EquipmentsTableViewController.h */,
 				6CCEC2631D05D96900DB30C0 /* EquipmentsTableViewController.m */,
 				6CCEC2791D082B5F00DB30C0 /* EquipmentListTableViewCell.h */,
@@ -391,7 +386,6 @@
 				6CCEC2641D05D96900DB30C0 /* EquipmentsTableViewController.m in Sources */,
 				6CCEC26F1D06D5DB00DB30C0 /* Calculator.m in Sources */,
 				6C9FEDF51D0B082200D6CA20 /* CNXEquipment.m in Sources */,
-				6C9FEE271D0EB90000D6CA20 /* ContactViewController.m in Sources */,
 				6CCEC23A1D04D9BE00DB30C0 /* AppDelegate.m in Sources */,
 				6C9FEDF71D0B082200D6CA20 /* CNXContact.m in Sources */,
 				6CCEC27B1D082B5F00DB30C0 /* EquipmentListTableViewCell.m in Sources */,

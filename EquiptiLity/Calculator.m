@@ -48,7 +48,7 @@
     
     NSDateComponents *dateComponents = [gregorianCalendar components:NSCalendarUnitDay fromDate:beginDate toDate:endDate options:0];
     
-    return [dateComponents day];
+    return [dateComponents day] + 1;
 }
 
 @end
