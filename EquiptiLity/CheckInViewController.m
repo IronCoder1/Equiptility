@@ -102,6 +102,7 @@
         self.callButtonOutlet.enabled = NO;
         NSLog(@"cannot openurl for call");
     }
+    self.eImageView.image = [UIImage imageWithContentsOfFile:self.anEquipment.eImageString];
 
 }
 
@@ -123,7 +124,7 @@
 {
     if (self.anEquipment.returnDate)
     {
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Hang On" message:@"Have you inspected the equipment notes?" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Hang On" message:@"Have you inspected the equipment?" preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Done" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
                              {

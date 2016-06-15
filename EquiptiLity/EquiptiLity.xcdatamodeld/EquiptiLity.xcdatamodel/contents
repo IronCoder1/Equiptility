@@ -14,10 +14,11 @@
         <attribute name="eRate" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="eSerialNo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="returnDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="cnxcontact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CNXContact" inverseName="cnxequipment" inverseEntity="CNXContact" syncable="YES"/>
     </entity>
     <elements>
         <element name="CNXContact" positionX="54" positionY="-55" width="128" height="118"/>
-        <element name="CNXEquipment" positionX="-108" positionY="-99" width="128" height="148"/>
+        <element name="CNXEquipment" positionX="-108" positionY="-99" width="128" height="165"/>
     </elements>
 </model>

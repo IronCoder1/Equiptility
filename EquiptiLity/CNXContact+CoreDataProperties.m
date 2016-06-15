@@ -2,7 +2,7 @@
 //  CNXContact+CoreDataProperties.m
 //  EquiptiLity
 //
-//  Created by MBPinTheAir on 11/06/2016.
+//  Created by MBPinTheAir on 15/06/2016.
 //  Copyright © 2016 moorsideinc. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -13,10 +13,10 @@
 
 @implementation CNXContact (CoreDataProperties)
 
-@dynamic cGivenName;
-@dynamic cFamilyName;
-@dynamic cIphoneNumber;
 @dynamic cEmailAddress;
+@dynamic cFamilyName;
+@dynamic cGivenName;
+@dynamic cIphoneNumber;
 @dynamic cnxequipment;
 
 @end

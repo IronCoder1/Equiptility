@@ -18,18 +18,28 @@
 
 +(NSDate *)calcReturnDateByAddingDays:(NSInteger)days
 {
-    
-    NSDate *todaysDate = [NSDate date];
     NSDateComponents *componentsToAdd = [[NSDateComponents alloc] init];
-    [componentsToAdd setDay:days];
+   // [componentsToAdd setDay:days];
+    componentsToAdd.day = days;
+ 
+    return [self dateFromComponents:componentsToAdd];;
     
-    NSCalendar *gregorian = [[NSCalendar alloc]
-                             initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-   NSDate *returnDate = [gregorian dateByAddingComponents:componentsToAdd
-                                                        toDate:todaysDate
-                                                  options:0];
-    return returnDate;
+}
+
++ (NSDate*)dateFromComponents:(NSDateComponents *)components
+{
+    NSDate *todaysDate = [NSDate date];
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDate *futureDate = [gregorianCalendar dateByAddingComponents:components toDate:todaysDate options:0];
     
+    return futureDate;
+}
+
++(NSDate*)calcSixMonthsDate
+{
+    NSDateComponents *components = [[NSDateComponents alloc]init];
+    components.month = 6;
+   return [self dateFromComponents:components];
 }
 
 @end

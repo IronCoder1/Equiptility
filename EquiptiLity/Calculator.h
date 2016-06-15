@@ -10,6 +10,6 @@
 
 @interface Calculator : NSObject
 +(int)calcTotal:(int)daysSelected with:(int)dailyRate;
-
++(NSDate*)calcSixMonthsDate;
 +(NSDate *)calcReturnDateByAddingDays:(NSInteger)days;
 @end

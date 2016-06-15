@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D7CAF3BAF3B70B25F582E5F8A974A69 /* GLCalendarDateRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A05FFD5D4A93F664F2450DF665F8ED /* GLCalendarDateRange.m */; };
+		12757A775CE7FEC1E095D30AA95A907B /* GLCalendarMonthCoverView.h in Headers */ = {isa = PBXBuildFile; fileRef = C1B00D201E610257FA6936C1200D226C /* GLCalendarMonthCoverView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B9F29167359B6E818C7A1F15E26188E /* GLCalendarMonthCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7B6BA980348EE11F89D2285486CA0D /* GLCalendarMonthCoverView.m */; };
+		2C562C0559F82B6B75EE82F86B022D70 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		3766B7D4AECB9AD619DFD9C74999C66F /* GLCalendarView.h in Headers */ = {isa = PBXBuildFile; fileRef = 355A719625CEA0294D8A2EE57E8DEF26 /* GLCalendarView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3FDC95253058EE81477B065930CEAF90 /* GLCalendarDayCellBackgroundCover.h in Headers */ = {isa = PBXBuildFile; fileRef = 30DF7B99C121FC856A051887333A7199 /* GLCalendarDayCellBackgroundCover.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4F7A1058336CBC6F3EA2A611F06068FC /* GLDateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E4205BCE8D03E73F6FFC68CA015798 /* GLDateUtils.m */; };
+		6603958DDF6DE924BC19EBD30D89FCA7 /* GLCalendarDayCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F1009C1B49915855899B9655FB90856 /* GLCalendarDayCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		69A9B68B22BAB2E29AE32388B981546B /* GLCalendarDayCellBackgroundCover.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EAB6C38E984740A8495D384FFBE38B /* GLCalendarDayCellBackgroundCover.m */; };
+		6BDFE0270D5FB37B280C6FE05D2F06E7 /* GLCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = D242540A3E2A9384944C0CDB4AB52D77 /* GLCalendarView.m */; };
+		8DC28A3E268A5D07F4A29EC77876C265 /* GLCalendarDateRange.h in Headers */ = {isa = PBXBuildFile; fileRef = 8411AA90E1EB6DEF46F6690CF3C20C42 /* GLCalendarDateRange.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9EDCAB6E3E10F87ECCA9A6C50E12D1FA /* Pods-EquiptiLity-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E26437D178A830FA52334B7A5983DFAB /* Pods-EquiptiLity-dummy.m */; };
+		C75A69498174093474F910F81C043187 /* GLCalendarDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 900F2F15F5D2FDCE5E3F41796EE5147D /* GLCalendarDayCell.m */; };
+		D0F76040528138C8ABCCB09FE435948E /* GLCalendarView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 06311D8193E7D9425B4FF408CC4269ED /* GLCalendarView-dummy.m */; };
+		E0E8C133E03AAE1044069E74F193E987 /* GLDateUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = FAD11F0DC0DA37366C65476D813CD095 /* GLDateUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F28D6901E69A90C7AF828B3D77A7F3E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		50890EE34A582005D68E2AE1B8B396DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FE8B6D40E280C026DDBE3B38D8903A2;
+			remoteInfo = GLCalendarView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0034AF82C647CC7A9BE2CBB7E9D0FEE7 /* Pods-EquiptiLity-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EquiptiLity-frameworks.sh"; sourceTree = "<group>"; };
+		06311D8193E7D9425B4FF408CC4269ED /* GLCalendarView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GLCalendarView-dummy.m"; sourceTree = "<group>"; };
+		10A05FFD5D4A93F664F2450DF665F8ED /* GLCalendarDateRange.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GLCalendarDateRange.m; path = GLCalendarView/Sources/GLCalendarDateRange.m; sourceTree = "<group>"; };
+		16E165779107946A2CAA8DCF7E205A5F /* GLCalendarView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GLCalendarView.xcconfig; sourceTree = "<group>"; };
+		1A765A43909A87F7C8AD095CEE8B39E4 /* GLCalendarDayCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = GLCalendarDayCell.xib; path = GLCalendarView/Sources/GLCalendarDayCell/GLCalendarDayCell.xib; sourceTree = "<group>"; };
+		1EF2B29073B9955B3AF6C8EDCAB7972E /* Pods-EquiptiLity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EquiptiLity.release.xcconfig"; sourceTree = "<group>"; };
+		30DF7B99C121FC856A051887333A7199 /* GLCalendarDayCellBackgroundCover.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GLCalendarDayCellBackgroundCover.h; path = GLCalendarView/Sources/GLCalendarDayCell/GLCalendarDayCellBackgroundCover.h; sourceTree = "<group>"; };
+		355A719625CEA0294D8A2EE57E8DEF26 /* GLCalendarView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GLCalendarView.h; path = GLCalendarView/Sources/GLCalendarView.h; sourceTree = "<group>"; };
+		53BBE98E21767BE527A8CF72E60DECA3 /* gl-calendar-shadow@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "gl-calendar-shadow@3x.png"; path = "GLCalendarView/Sources/Images/gl-calendar-shadow@3x.png"; sourceTree = "<group>"; };
+		69E4205BCE8D03E73F6FFC68CA015798 /* GLDateUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GLDateUtils.m; path = GLCalendarView/Sources/GLDateUtils.m; sourceTree = "<group>"; };
+		7AB5A2A948C18245830405987966081C /* Pods-EquiptiLity-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EquiptiLity-acknowledgements.markdown"; sourceTree = "<group>"; };
+		815F35B052CDF4326BD21872E13D9865 /* gl-calendar-magnify-glass.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "gl-calendar-magnify-glass.png"; path = "GLCalendarView/Sources/Images/gl-calendar-magnify-glass.png"; sourceTree = "<group>"; };
+		8411AA90E1EB6DEF46F6690CF3C20C42 /* GLCalendarDateRange.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GLCalendarDateRange.h; path = GLCalendarView/Sources/GLCalendarDateRange.h; sourceTree = "<group>"; };
+		8AC4C52DBD839B28ED1A1777978BB1A0 /* Pods-EquiptiLity-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EquiptiLity-resources.sh"; sourceTree = "<group>"; };
+		8C545B625F34F4DFD3C05A042F82925B /* Pods-EquiptiLity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EquiptiLity.debug.xcconfig"; sourceTree = "<group>"; };
+		8DA9F5E448D3BDD9C3CA9FB71456EDFA /* gl-calendar-magnify-glass@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "gl-calendar-magnify-glass@2x.png"; path = "GLCalendarView/Sources/Images/gl-calendar-magnify-glass@2x.png"; sourceTree = "<group>"; };
+		8DBAC8EA32B9C43AB8901E8EF4C92316 /* GLCalendarView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GLCalendarView-prefix.pch"; sourceTree = "<group>"; };
+		900F2F15F5D2FDCE5E3F41796EE5147D /* GLCalendarDayCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GLCalendarDayCell.m; path = GLCalendarView/Sources/GLCalendarDayCell/GLCalendarDayCell.m; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		98EAB6C38E984740A8495D384FFBE38B /* GLCalendarDayCellBackgroundCover.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GLCalendarDayCellBackgroundCover.m; path = GLCalendarView/Sources/GLCalendarDayCell/GLCalendarDayCellBackgroundCover.m; sourceTree = "<group>"; };
+		9B63B69A13572E77B8BCCF8732CE2BA1 /* gl-calendar-shadow@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "gl-calendar-shadow@2x.png"; path = "GLCalendarView/Sources/Images/gl-calendar-shadow@2x.png"; sourceTree = "<group>"; };
+		9F1009C1B49915855899B9655FB90856 /* GLCalendarDayCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GLCalendarDayCell.h; path = GLCalendarView/Sources/GLCalendarDayCell/GLCalendarDayCell.h; sourceTree = "<group>"; };
+		A0A0E2672846B03542D3075FD6ECD7F0 /* GLCalendarView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = GLCalendarView.xib; path = GLCalendarView/Sources/GLCalendarView.xib; sourceTree = "<group>"; };
+		AB406390CBF916A19F5D65403FF5FBA5 /* Pods-EquiptiLity-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EquiptiLity-acknowledgements.plist"; sourceTree = "<group>"; };
+		B74B250F30F0A8506B8888ED99E19263 /* libPods-EquiptiLity.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EquiptiLity.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA7B6BA980348EE11F89D2285486CA0D /* GLCalendarMonthCoverView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GLCalendarMonthCoverView.m; path = GLCalendarView/Sources/GLCalendarMonthCoverView.m; sourceTree = "<group>"; };
+		C1B00D201E610257FA6936C1200D226C /* GLCalendarMonthCoverView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GLCalendarMonthCoverView.h; path = GLCalendarView/Sources/GLCalendarMonthCoverView.h; sourceTree = "<group>"; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D242540A3E2A9384944C0CDB4AB52D77 /* GLCalendarView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GLCalendarView.m; path = GLCalendarView/Sources/GLCalendarView.m; sourceTree = "<group>"; };
+		E26437D178A830FA52334B7A5983DFAB /* Pods-EquiptiLity-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EquiptiLity-dummy.m"; sourceTree = "<group>"; };
+		E6AC9E1EE2DFC16286AE082BDCAE0CD1 /* gl-calendar-shadow.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "gl-calendar-shadow.png"; path = "GLCalendarView/Sources/Images/gl-calendar-shadow.png"; sourceTree = "<group>"; };
+		FA5C6D03DBAF1919194E4F32C36EA187 /* libGLCalendarView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGLCalendarView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAD11F0DC0DA37366C65476D813CD095 /* GLDateUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GLDateUtils.h; path = GLCalendarView/Sources/GLDateUtils.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1966266316A4B6FF705F8CB2C53C4D46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F28D6901E69A90C7AF828B3D77A7F3E1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F893ADDAE78F99C0EAE8E5C89A392A93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C562C0559F82B6B75EE82F86B022D70 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1CF0657AD3636958B203A64E9C6FE5FA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				16E165779107946A2CAA8DCF7E205A5F /* GLCalendarView.xcconfig */,
+				06311D8193E7D9425B4FF408CC4269ED /* GLCalendarView-dummy.m */,
+				8DBAC8EA32B9C43AB8901E8EF4C92316 /* GLCalendarView-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GLCalendarView";
+			sourceTree = "<group>";
+		};
+		356969CF7C457F6A7FF616CCAA691795 /* Pods-EquiptiLity */ = {
+			isa = PBXGroup;
+			children = (
+				7AB5A2A948C18245830405987966081C /* Pods-EquiptiLity-acknowledgements.markdown */,
+				AB406390CBF916A19F5D65403FF5FBA5 /* Pods-EquiptiLity-acknowledgements.plist */,
+				E26437D178A830FA52334B7A5983DFAB /* Pods-EquiptiLity-dummy.m */,
+				0034AF82C647CC7A9BE2CBB7E9D0FEE7 /* Pods-EquiptiLity-frameworks.sh */,
+				8AC4C52DBD839B28ED1A1777978BB1A0 /* Pods-EquiptiLity-resources.sh */,
+				8C545B625F34F4DFD3C05A042F82925B /* Pods-EquiptiLity.debug.xcconfig */,
+				1EF2B29073B9955B3AF6C8EDCAB7972E /* Pods-EquiptiLity.release.xcconfig */,
+			);
+			name = "Pods-EquiptiLity";
+			path = "Target Support Files/Pods-EquiptiLity";
+			sourceTree = "<group>";
+		};
+		379A0F1169A9FCAE4D0ED3ABA59EF274 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EB1617891319ED058AAF438BA553EFD9 /* GLCalendarView */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7CDC9286C3D201701521485BF1AE7FEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				815F35B052CDF4326BD21872E13D9865 /* gl-calendar-magnify-glass.png */,
+				8DA9F5E448D3BDD9C3CA9FB71456EDFA /* gl-calendar-magnify-glass@2x.png */,
+				E6AC9E1EE2DFC16286AE082BDCAE0CD1 /* gl-calendar-shadow.png */,
+				9B63B69A13572E77B8BCCF8732CE2BA1 /* gl-calendar-shadow@2x.png */,
+				53BBE98E21767BE527A8CF72E60DECA3 /* gl-calendar-shadow@3x.png */,
+				1A765A43909A87F7C8AD095CEE8B39E4 /* GLCalendarDayCell.xib */,
+				A0A0E2672846B03542D3075FD6ECD7F0 /* GLCalendarView.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				379A0F1169A9FCAE4D0ED3ABA59EF274 /* Pods */,
+				F4094EB8FA39291CACEA51F29FFC59EE /* Products */,
+				8D5B6218E42E7C902F8F79A442A0A18D /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8D5B6218E42E7C902F8F79A442A0A18D /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				356969CF7C457F6A7FF616CCAA691795 /* Pods-EquiptiLity */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB1617891319ED058AAF438BA553EFD9 /* GLCalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				8411AA90E1EB6DEF46F6690CF3C20C42 /* GLCalendarDateRange.h */,
+				10A05FFD5D4A93F664F2450DF665F8ED /* GLCalendarDateRange.m */,
+				9F1009C1B49915855899B9655FB90856 /* GLCalendarDayCell.h */,
+				900F2F15F5D2FDCE5E3F41796EE5147D /* GLCalendarDayCell.m */,
+				30DF7B99C121FC856A051887333A7199 /* GLCalendarDayCellBackgroundCover.h */,
+				98EAB6C38E984740A8495D384FFBE38B /* GLCalendarDayCellBackgroundCover.m */,
+				C1B00D201E610257FA6936C1200D226C /* GLCalendarMonthCoverView.h */,
+				BA7B6BA980348EE11F89D2285486CA0D /* GLCalendarMonthCoverView.m */,
+				355A719625CEA0294D8A2EE57E8DEF26 /* GLCalendarView.h */,
+				D242540A3E2A9384944C0CDB4AB52D77 /* GLCalendarView.m */,
+				FAD11F0DC0DA37366C65476D813CD095 /* GLDateUtils.h */,
+				69E4205BCE8D03E73F6FFC68CA015798 /* GLDateUtils.m */,
+				7CDC9286C3D201701521485BF1AE7FEA /* Resources */,
+				1CF0657AD3636958B203A64E9C6FE5FA /* Support Files */,
+			);
+			path = GLCalendarView;
+			sourceTree = "<group>";
+		};
+		F4094EB8FA39291CACEA51F29FFC59EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA5C6D03DBAF1919194E4F32C36EA187 /* libGLCalendarView.a */,
+				B74B250F30F0A8506B8888ED99E19263 /* libPods-EquiptiLity.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		53639394E794DA839822B4B0D20ED43D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DC28A3E268A5D07F4A29EC77876C265 /* GLCalendarDateRange.h in Headers */,
+				6603958DDF6DE924BC19EBD30D89FCA7 /* GLCalendarDayCell.h in Headers */,
+				3FDC95253058EE81477B065930CEAF90 /* GLCalendarDayCellBackgroundCover.h in Headers */,
+				12757A775CE7FEC1E095D30AA95A907B /* GLCalendarMonthCoverView.h in Headers */,
+				3766B7D4AECB9AD619DFD9C74999C66F /* GLCalendarView.h in Headers */,
+				E0E8C133E03AAE1044069E74F193E987 /* GLDateUtils.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		01BA59173165109CC16B2BCC9E963142 /* Pods-EquiptiLity */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E777300001092BD44859A1467880E60 /* Build configuration list for PBXNativeTarget "Pods-EquiptiLity" */;
+			buildPhases = (
+				5404617FFE2B7C8E15760086B5E06104 /* Sources */,
+				1966266316A4B6FF705F8CB2C53C4D46 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0BE823324649F90797CCDA5CCC53CB24 /* PBXTargetDependency */,
+			);
+			name = "Pods-EquiptiLity";
+			productName = "Pods-EquiptiLity";
+			productReference = B74B250F30F0A8506B8888ED99E19263 /* libPods-EquiptiLity.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		4FE8B6D40E280C026DDBE3B38D8903A2 /* GLCalendarView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C34C2EDA2D6A36FD6945AD2D4FB32943 /* Build configuration list for PBXNativeTarget "GLCalendarView" */;
+			buildPhases = (
+				508BD2DA1FFE6DCC6B2FF6233500F6C2 /* Sources */,
+				F893ADDAE78F99C0EAE8E5C89A392A93 /* Frameworks */,
+				53639394E794DA839822B4B0D20ED43D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GLCalendarView;
+			productName = GLCalendarView;
+			productReference = FA5C6D03DBAF1919194E4F32C36EA187 /* libGLCalendarView.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = F4094EB8FA39291CACEA51F29FFC59EE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4FE8B6D40E280C026DDBE3B38D8903A2 /* GLCalendarView */,
+				01BA59173165109CC16B2BCC9E963142 /* Pods-EquiptiLity */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		508BD2DA1FFE6DCC6B2FF6233500F6C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D7CAF3BAF3B70B25F582E5F8A974A69 /* GLCalendarDateRange.m in Sources */,
+				C75A69498174093474F910F81C043187 /* GLCalendarDayCell.m in Sources */,
+				69A9B68B22BAB2E29AE32388B981546B /* GLCalendarDayCellBackgroundCover.m in Sources */,
+				2B9F29167359B6E818C7A1F15E26188E /* GLCalendarMonthCoverView.m in Sources */,
+				D0F76040528138C8ABCCB09FE435948E /* GLCalendarView-dummy.m in Sources */,
+				6BDFE0270D5FB37B280C6FE05D2F06E7 /* GLCalendarView.m in Sources */,
+				4F7A1058336CBC6F3EA2A611F06068FC /* GLDateUtils.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5404617FFE2B7C8E15760086B5E06104 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9EDCAB6E3E10F87ECCA9A6C50E12D1FA /* Pods-EquiptiLity-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0BE823324649F90797CCDA5CCC53CB24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GLCalendarView;
+			target = 4FE8B6D40E280C026DDBE3B38D8903A2 /* GLCalendarView */;
+			targetProxy = 50890EE34A582005D68E2AE1B8B396DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1BB0C620C9BE2A5E5CCE29AEBA7AAA60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16E165779107946A2CAA8DCF7E205A5F /* GLCalendarView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/GLCalendarView/GLCalendarView-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3FA451D268613890FA8A5A03801E11D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5E62115DE8C09934BF8D2FE5D15FED1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		CAB0EC12014539A314F4CC121D543F71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16E165779107946A2CAA8DCF7E205A5F /* GLCalendarView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/GLCalendarView/GLCalendarView-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D83CB8A628FD9E46F1E215A964F47300 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EF2B29073B9955B3AF6C8EDCAB7972E /* Pods-EquiptiLity.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		FD3BB74BC27AF069B743C358EB116CC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C545B625F34F4DFD3C05A042F82925B /* Pods-EquiptiLity.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E62115DE8C09934BF8D2FE5D15FED1E /* Debug */,
+				3FA451D268613890FA8A5A03801E11D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5E777300001092BD44859A1467880E60 /* Build configuration list for PBXNativeTarget "Pods-EquiptiLity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD3BB74BC27AF069B743C358EB116CC4 /* Debug */,
+				D83CB8A628FD9E46F1E215A964F47300 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C34C2EDA2D6A36FD6945AD2D4FB32943 /* Build configuration list for PBXNativeTarget "GLCalendarView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BB0C620C9BE2A5E5CCE29AEBA7AAA60 /* Debug */,
+				CAB0EC12014539A314F4CC121D543F71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

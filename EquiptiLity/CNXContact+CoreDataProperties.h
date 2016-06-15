@@ -2,7 +2,7 @@
 //  CNXContact+CoreDataProperties.h
 //  EquiptiLity
 //
-//  Created by MBPinTheAir on 11/06/2016.
+//  Created by MBPinTheAir on 15/06/2016.
 //  Copyright © 2016 moorsideinc. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -15,10 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CNXContact (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSString *cGivenName;
-@property (nullable, nonatomic, retain) NSString *cFamilyName;
-@property (nullable, nonatomic, retain) NSString *cIphoneNumber;
 @property (nullable, nonatomic, retain) NSString *cEmailAddress;
+@property (nullable, nonatomic, retain) NSString *cFamilyName;
+@property (nullable, nonatomic, retain) NSString *cGivenName;
+@property (nullable, nonatomic, retain) NSString *cIphoneNumber;
 @property (nullable, nonatomic, retain) NSSet<CNXEquipment *> *cnxequipment;
 
 @end

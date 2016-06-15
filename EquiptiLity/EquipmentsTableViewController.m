@@ -124,8 +124,8 @@
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
         NSInteger row = indexPath.row;
-        [self.allEquipments removeObjectAtIndex:row];
         [self.appDelegate.managedObjectContext deleteObject:self.allEquipments[row]];
+        [self.allEquipments removeObjectAtIndex:row];
         NSError *error = nil;
         [self.appDelegate.managedObjectContext save:&error];
         if (error) {
