@@ -77,44 +77,44 @@
 
 }
 
-#pragma MARK Pickerview Delegates
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
-    return 1;
-}
-- (NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent: (NSInteger) component
-{
-    return [self.daysArray count];
-}
-
-- (NSString *) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger) component
-{
-    if ([self.daysArray[row] intValue] <=1)
-    {
-    return [NSString stringWithFormat:@"%@ Day",self.daysArray[row]] ;
-    }
-    else
-    {
-    return [NSString stringWithFormat:@"%@ Days",self.daysArray[row]] ;
-    }
-}
-
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-{
-    noOfDays = [self.daysArray[row] intValue];
-  
-    int total = [Calculator calcTotal:noOfDays with:[self.anEquipment.eRate intValue]];
-    self.totalLabel.text = [NSString stringWithFormat:@"£%d",total];
-    
-    NSDateFormatter *dateFormatted = [[NSDateFormatter alloc]init];
-    [dateFormatted setDateStyle:NSDateFormatterMediumStyle];
-    
-    NSDate *retDate = [Calculator calcReturnDateByAddingDays:noOfDays];
-    NSString *dateString = [dateFormatted stringFromDate:retDate];
-    self.retDateLabel.text = [NSString stringWithFormat:@"%@",dateString];
-    
-    self.anEquipment.returnDate = retDate;
-}
+//#pragma MARK Pickerview Delegates
+//- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+//{
+//    return 1;
+//}
+//- (NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent: (NSInteger) component
+//{
+//    return [self.daysArray count];
+//}
+//
+//- (NSString *) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger) component
+//{
+//    if ([self.daysArray[row] intValue] <=1)
+//    {
+//    return [NSString stringWithFormat:@"%@ Day",self.daysArray[row]] ;
+//    }
+//    else
+//    {
+//    return [NSString stringWithFormat:@"%@ Days",self.daysArray[row]] ;
+//    }
+//}
+//
+//- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+//{
+//    noOfDays = [self.daysArray[row] intValue];
+//  
+//    int total = [Calculator calcTotal:noOfDays with:[self.anEquipment.eRate intValue]];
+//    self.totalLabel.text = [NSString stringWithFormat:@"£%d",total];
+//    
+//    NSDateFormatter *dateFormatted = [[NSDateFormatter alloc]init];
+//    [dateFormatted setDateStyle:NSDateFormatterMediumStyle];
+//    
+//    NSDate *retDate = [Calculator calcReturnDateByAddingDays:noOfDays];
+//    NSString *dateString = [dateFormatted stringFromDate:retDate];
+//    self.retDateLabel.text = [NSString stringWithFormat:@"%@",dateString];
+//    
+//    self.anEquipment.returnDate = retDate;
+//}
 
 
 #pragma mark - Navigation
@@ -165,7 +165,15 @@
     NSDate *endDate = [GLDateUtils dateByAddingDays:1 toDate:beginDate];
     GLCalendarDateRange *range = [GLCalendarDateRange rangeWithBeginDate:beginDate endDate:endDate];
     range.editable = YES;
-    range.backgroundColor = [UIColor colorWithRed:59 green:82 blue:73 alpha:1];
+    range.backgroundColor = [UIColor greenColor];
+    noOfDays = (int)[Calculator calcDays:beginDate withEndDate:endDate];
+    self.anEquipment.returnDate = endDate;
+    self.anEquipment.startDate = beginDate;
+    [self updateTotal];
+    [self updateRetDate];
+   
+    NSLog(@"rangetoadd dates begin:%@ end: %@", self.anEquipment.startDate, self.anEquipment.returnDate);
+
 //    self.calendarView.ranges = [@[range] mutableCopy];
 
     return range;
@@ -178,85 +186,33 @@
 {
     self.rangeUnderEdit = nil;
 }
-- (BOOL)calenderView:(GLCalendarView *)calendarView canUpdateRange:(GLCalendarDateRange *)range toBeginDate:(NSDate *)beginDate endDate:(NSDate *)endDate{
+- (BOOL)calenderView:(GLCalendarView *)calendarView canUpdateRange:(GLCalendarDateRange *)range toBeginDate:(NSDate *)beginDate endDate:(NSDate *)endDate
+{
     return YES;
 }
 
 - (void)calenderView:(GLCalendarView *)calendarView didUpdateRange:(GLCalendarDateRange *)range toBeginDate:(NSDate *)beginDate endDate:(NSDate *)endDate
 {
-    
+    noOfDays = (int)[Calculator calcDays:beginDate withEndDate:endDate];
     self.anEquipment.returnDate = endDate;
-    
-    NSLog(@"did update range: %@", range);
+    self.anEquipment.startDate = beginDate;
+    [self updateRetDate];
+    [self updateTotal];
+        NSLog(@"did update dates begin:%@ end: %@", self.anEquipment.startDate, self.anEquipment.returnDate);
+    NSLog(@"days = %d", noOfDays);
 }
-/*
-//
-//
-//- (IBAction)checkoutTapped:(id)sender
-//{
-//    if (self.anEquipment.returnDate == nil)
-//    {
-//        self.anEquipment.returnDate = [Calculator calcReturnDateByAddingDays:noOfDays];
-//        NSError *error = nil;
-//        [self.appDelegate.managedObjectContext save:&error];
-//        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Great!" message:@"The checkout was succesful" preferredStyle:UIAlertControllerStyleAlert];
-//        
-//        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-//            [self.navigationController popViewControllerAnimated:YES];
-//        }];
-//        [alertController addAction:ok];
-//        [self presentViewController:alertController animated:YES completion:nil];
-//        
-//        if (error)
-//        {
-//            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Oops!" message:@"Sorry there as been a problem please go back and try again" preferredStyle:UIAlertControllerStyleAlert];
-//            
-//            UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Back" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-//            }];
-//            [alertController addAction:ok];
-//            [self presentViewController:alertController animated:YES completion:nil];
-//            
-//            NSLog(@"coredata could not saveee at line93 calculatetotal %@", [error localizedDescription]);
-//        }
-//    }
-//}
 
 
-//- (IBAction)addClientButtonTapped:(id)sender
-//{
-//    CNContactPickerViewController *cnpvc = [[CNContactPickerViewController alloc]init];
-//    cnpvc.delegate = self;
-//    [self presentViewController:cnpvc animated:YES completion:nil];
-//}
-
-
-
-
-#pragma mark  - private methods
-
-//-(NSString *)saveImageToDisk
-//{
-//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//    NSUUID *uuID = [NSUUID UUID];
-//    NSString *secondBaseString = [NSString stringWithFormat:@"%@.png",[uuID UUIDString]];
-//    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:secondBaseString];
-//    UIImage *newImage;
-//    [UIImagePNGRepresentation(newImage) writeToFile:filePath atomically:YES];
-//    NSLog(@"file path %@", filePath);
-//    return filePath;
-//}
-//
-//#pragma mark - ImagePicker Delegate Methods
-//-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
-//{
-//    UIImage *itemImage = [info objectForKey:UIImagePickerControllerOriginalImage];
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//}
-//
-//- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
-//{
-//   self.anEquipment.eImageString = [self saveImageToDisk];
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//}
-*/
+-(void)updateTotal
+{
+    int total = [Calculator calcTotal:noOfDays with:[self.anEquipment.eRate intValue]];
+    self.totalLabel.text = [NSString stringWithFormat:@"£%d",total];
+}
+-(void)updateRetDate
+{
+    NSDateFormatter *dateFormatted = [[NSDateFormatter alloc]init];
+    [dateFormatted setDateStyle:NSDateFormatterMediumStyle];
+    NSString *dateString = [dateFormatted stringFromDate:self.anEquipment.returnDate];
+    self.retDateLabel.text = [NSString stringWithFormat:@"%@",dateString];
+}
 @end

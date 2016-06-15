@@ -12,4 +12,6 @@
 +(int)calcTotal:(int)daysSelected with:(int)dailyRate;
 +(NSDate*)calcSixMonthsDate;
 +(NSDate *)calcReturnDateByAddingDays:(NSInteger)days;
++(NSInteger)calcDays:(NSDate*)beginDate withEndDate:(NSDate*)endDate;
+
 @end

@@ -42,4 +42,13 @@
    return [self dateFromComponents:components];
 }
 
++(NSInteger)calcDays:(NSDate*)beginDate withEndDate:(NSDate*)endDate
+{
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    
+    NSDateComponents *dateComponents = [gregorianCalendar components:NSCalendarUnitDay fromDate:beginDate toDate:endDate options:0];
+    
+    return [dateComponents day];
+}
+
 @end

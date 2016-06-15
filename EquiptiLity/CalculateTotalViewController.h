@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CNXEquipment.h"
 
-@interface CalculateTotalViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
+@interface CalculateTotalViewController : UIViewController
 @property (strong,nonatomic) CNXEquipment *anEquipment;
 
 @end
