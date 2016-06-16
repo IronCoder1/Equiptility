@@ -11,7 +11,7 @@
 #import "ConfirmHireViewController.h"
 #import <GLCalendarView/GLCalendarView.h>
 #import <GLCalendarView/GLDateUtils.h>
-
+#import "AppDelegate.h"
 @import ContactsUI;
 
 @interface CalculateTotalViewController ()<GLCalendarViewDelegate>
@@ -19,16 +19,19 @@
     int noOfDays;
 }
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *nextTapped;
 @property (strong, nonatomic) NSMutableArray *daysArray;
 @property (weak, nonatomic) IBOutlet UILabel *dailyRateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalLabel;
 @property (weak, nonatomic) IBOutlet UILabel *retDateLabel;
-@property (weak, nonatomic) IBOutlet UIButton *nextTapped;
 @property (weak, nonatomic) IBOutlet GLCalendarView *calendarView;
 @property (nonatomic, weak) GLCalendarDateRange *rangeUnderEdit;
+@property (nonatomic, strong) AppDelegate *appDelegate;
 @property (strong, nonatomic) NSDate *lastDate;
 @property (strong, nonatomic) NSDate *firstDate;
 - (IBAction)nextButtonTapped:(id)sender;
+- (IBAction)cancelButtonTapped:(id)sender;
+
 
 @end
 
@@ -37,6 +40,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Get Quote";
     self.firstDate = [NSDate date];
     self.lastDate = [Calculator calcSixMonthsDate];
     self.dailyRateLabel.text = [NSString stringWithFormat:@"£%d", [self.anEquipment.eRate intValue]];
@@ -50,7 +54,14 @@
 {
     self.calendarView.firstDate  = self.firstDate;
     self.calendarView.lastDate = self.lastDate;
+    if (self.anEquipment.startDate)
+    {
+    GLCalendarDateRange *chosenRange = [GLCalendarDateRange rangeWithBeginDate:self.anEquipment.startDate endDate:self.anEquipment.returnDate];
+    self.calendarView.ranges = [@[chosenRange]mutableCopy];
+    }
     [self.calendarView reload];
+    
+    
 }
 
 
@@ -82,11 +93,22 @@
     }
 }
 
+- (IBAction)cancelButtonTapped:(id)sender
+{
+//    self.anEquipment.startDate = nil;
+//    self.anEquipment.returnDate = nil;
+   self.appDelegate = [UIApplication sharedApplication].delegate;
+    [self.appDelegate.managedObjectContext refreshObject:self.anEquipment mergeChanges:NO];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
 #pragma MARK CalendarView Delegate Methods
 
 - (BOOL)calenderView:(GLCalendarView *)calendarView canAddRangeWithBeginDate:(NSDate *)beginDate
 {
-    NSComparisonResult compareDates = [beginDate compare:[NSDate date]];
+    NSDate *cutDate = [GLDateUtils cutDate:[NSDate date]];
+    NSComparisonResult compareDates = [beginDate compare:cutDate];
     if (compareDates == NSOrderedAscending)
     {
         return NO;
@@ -120,8 +142,6 @@
 - (void)calenderView:(GLCalendarView *)calendarView beginToEditRange:(GLCalendarDateRange *)range
 {
     self.rangeUnderEdit = range;
-    self.anEquipment.startDate = nil;
-    self.anEquipment.returnDate = nil;
 }
 - (void)calenderView:(GLCalendarView *)calendarView finishEditRange:(GLCalendarDateRange *)range continueEditing:(BOOL)continueEditing
 {
@@ -129,8 +149,10 @@
 }
 - (BOOL)calenderView:(GLCalendarView *)calendarView canUpdateRange:(GLCalendarDateRange *)range toBeginDate:(NSDate *)beginDate endDate:(NSDate *)endDate
 {
-    NSComparisonResult compareDates = [beginDate compare:[NSDate date]];
-    if (compareDates != NSOrderedDescending)
+    
+    NSDate *cutDate = [GLDateUtils cutDate:[NSDate date]];
+    NSComparisonResult compareDates = [beginDate compare:cutDate];
+    if (compareDates == NSOrderedAscending)
     {
         return NO;
     }

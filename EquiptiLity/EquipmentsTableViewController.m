@@ -198,7 +198,8 @@
     
     if ([segue.identifier isEqualToString:@"toCheckOutSegue"])
     {
-    CalculateTotalViewController *ctvc = [segue destinationViewController];
+        UINavigationController *navControlla = (UINavigationController*) [segue destinationViewController];
+    CalculateTotalViewController *ctvc =  (CalculateTotalViewController*)navControlla.topViewController;
         NSIndexPath *newPath = [self.tableView indexPathForSelectedRow];
         CNXEquipment *anEquipment = self.allEquipments[newPath.row];
         ctvc.anEquipment = anEquipment;

@@ -42,9 +42,9 @@
         self.eNotesTextView.text = self.anEquipment.eNote;
     }
     else
-    {
-        self.eNotesTextView.text = @"Tap to add or edit notes";
-    }
+//    {
+//        self.eNotesTextView.text = @"Tap to add or edit notes";
+//    }
     [self updateImageView];
 //    self.eNotesTextView.delegate = self;
 }
@@ -65,7 +65,6 @@
     CNContactPickerViewController *cnpvc = [[CNContactPickerViewController alloc]init];
     cnpvc.delegate = self;
     [self presentViewController:cnpvc animated:YES completion:nil];
-    
 }
 
 -(void)contactPicker:(CNContactPickerViewController *)picker didSelectContact:(CNContact *)contact
@@ -97,8 +96,15 @@
     UIAlertAction *option1 = [UIAlertAction actionWithTitle:@"Use Camera" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action)
                               {
                                   NSLog(@"Option 1 was tapped");
-                                  picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-                                  [self presentViewController:picker animated:YES completion:nil];
+                                  if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+                                  {
+                                      picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+                                      [self presentViewController:picker animated:YES completion:nil];
+                                  }
+                                  else
+                                  {
+                                      NSLog(@"THERES NO CAMERA DUDE");
+                                  }
                               }];
     
     UIAlertAction *option2 = [UIAlertAction actionWithTitle:@"Open Photo Library" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
@@ -144,7 +150,7 @@
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
-    if([text isEqualToString:@""])
+    if([text isEqualToString:@"\n"])
     {
         [textView resignFirstResponder];
         return NO;
@@ -152,6 +158,7 @@
     
     return YES;
 }
+
 
 -(IBAction)confirmHireButtonTapped:(id)sender
 {
@@ -162,7 +169,7 @@
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Great!" message:@"The checkout was succesful" preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            [self.navigationController popToRootViewControllerAnimated:YES];
+            [self.navigationController dismissViewControllerAnimated:YES completion:nil];
         }];
         [alertController addAction:ok];
         [self presentViewController:alertController animated:YES completion:nil];
@@ -178,7 +185,6 @@
             NSLog(@"coredata could not saveee at line93 confirmvc %@", [error localizedDescription]);
         }
     }
-    
 }
 
 -(void)updateImageView
