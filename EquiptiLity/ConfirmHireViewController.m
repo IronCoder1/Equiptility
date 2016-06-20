@@ -41,12 +41,13 @@
     {
         self.eNotesTextView.text = self.anEquipment.eNote;
     }
-    else
-//    {
-//        self.eNotesTextView.text = @"Tap to add or edit notes";
-//    }
     [self updateImageView];
-//    self.eNotesTextView.delegate = self;
+
+    if (self.anEquipment.cnxcontact)
+    {
+    self.contactsLabel.text = [NSString stringWithFormat:@"%@ %@", self.anEquipment.cnxcontact.cGivenName,self.anEquipment.cnxcontact.cFamilyName];
+    }
+
 }
 /*
 #pragma mark - Navigation

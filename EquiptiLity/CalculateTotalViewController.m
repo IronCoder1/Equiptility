@@ -58,7 +58,8 @@
     {
     GLCalendarDateRange *chosenRange = [GLCalendarDateRange rangeWithBeginDate:self.anEquipment.startDate endDate:self.anEquipment.returnDate];
     self.calendarView.ranges = [@[chosenRange]mutableCopy];
-    }
+    }                                                                                                                       
+    
     [self.calendarView reload];
     
     
@@ -129,7 +130,7 @@
     NSDate *endDate = [GLDateUtils dateByAddingDays:1 toDate:beginDate];
     GLCalendarDateRange *range = [GLCalendarDateRange rangeWithBeginDate:beginDate endDate:endDate];
     range.editable = YES;
-    range.backgroundColor = [UIColor greenColor];
+    range.backgroundColor = [UIColor grayColor];
     noOfDays = (int)[Calculator calcDays:beginDate withEndDate:endDate];
     self.anEquipment.returnDate = endDate;
     self.anEquipment.startDate = beginDate;

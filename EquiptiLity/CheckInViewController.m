@@ -15,14 +15,12 @@
 - (IBAction)cancelButtonTapped:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *equipmentLabel;
 @property (weak, nonatomic) IBOutlet UITextView *noteView;
-@property (weak, nonatomic) IBOutlet UILabel *serialNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *returnDateLabel;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *checkInButtonOutlet;
 @property  (strong, nonatomic) AppDelegate *appDelegate;
 - (IBAction)checkInButtonTapped:(id)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *eImageView;
 @property (weak, nonatomic) IBOutlet UILabel *contactName;
-@property (weak, nonatomic) IBOutlet UILabel *contactPhone;
 - (IBAction)callButtonTapped:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *callButtonOutlet;
 
@@ -35,25 +33,20 @@
     self.appDelegate   = [UIApplication sharedApplication].delegate;
     self.title = @"Lease Summary";
     self.contactName.text = self.anEquipment.cnxcontact.cGivenName;
-    self.contactPhone.text = self.anEquipment.cnxcontact.cIphoneNumber;
     self.equipmentLabel.text = self.anEquipment.eBrandModel;
     [self.noteView setScrollEnabled:YES];
-    if (self.anEquipment.eNote == nil || [self.anEquipment.eNote isEqualToString:@""])
-    {
-        self.noteView.text = @"n/a";
-    }
-    else
+    if (self.anEquipment.eNote)
     {
         self.noteView.text = self.anEquipment.eNote;
     }
-    if ([self.anEquipment.eSerialNo isEqualToString:@""]) {
-        self.serialNumberLabel.font = [UIFont systemFontOfSize:13 weight:0.01];
-        self.serialNumberLabel.text = @"n/a";
-    }
-    else
-    {
-    self.serialNumberLabel.text = self.anEquipment.eSerialNo;
-    }
+//    if (self.anEquipment.eNote == nil || [self.anEquipment.eNote isEqualToString:@""])
+//    {
+//        self.noteView.text = @"";
+//    }
+//    else
+//    {
+//        self.noteView.text = self.anEquipment.eNote;
+//    }
     NSDateFormatter *dateFormatted = [[NSDateFormatter alloc]init];
     [dateFormatted setDateStyle:NSDateFormatterMediumStyle];
     
@@ -74,9 +67,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 -(void)viewWillAppear:(BOOL)animated
 {
-    self.eImageView.image = [UIImage imageWithContentsOfFile:self.anEquipment.eImageString];
+    [self updateImageView];
     CNXContact *contact = self.anEquipment.cnxcontact;
     if ([contact.cIphoneNumber isEqualToString:@""] || !contact.cIphoneNumber)
     {
@@ -91,6 +85,26 @@
         self.callButtonOutlet.enabled = NO;
         NSLog(@"cannot openurl for call");
     }
+}
+-(void)updateImageView
+{
+    UIImage *imgg = [UIImage imageWithContentsOfFile:self.anEquipment.eImageString];
+    if (imgg)
+    {
+        self.eImageView.image = imgg;
+        self.eImageView.contentMode = UIViewContentModeScaleAspectFill;
+    }
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if([text isEqualToString:@"\n"])
+    {
+        [textView resignFirstResponder];
+        return NO;
+    }
+
+    return YES;
 }
 
 #pragma mark - Navigation
